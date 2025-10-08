@@ -1,8 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+    --color-blackBg: #000001;
+    --color-primary: #f5f5f5;
+    --color-dark: #17181c80;
+
+    --font-canela: var(--font-canela), sans-serif;
+
+    --breakpoint-xs: 360px;
 }
