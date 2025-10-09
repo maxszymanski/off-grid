@@ -54,7 +54,7 @@ function Navbar() {
             <TopBar />
 
             <div
-                className={`wrapper h-[50px] w-full ${hasBorder ? 'bg-blackBg' : 'bg-transparent'}`}
+                className={`h-14 w-full ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
                 ref={navRef}
             >
                 <MobileNav
