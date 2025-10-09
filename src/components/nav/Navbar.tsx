@@ -3,7 +3,7 @@
 import useClickOutside from '@/_hooks/useClickOutside'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import TopBar from './TopBar'
-import MobileNav from './MobileNav'
+import Nav from './Nav'
 import { createPortal } from 'react-dom'
 
 function Navbar() {
@@ -49,19 +49,15 @@ function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 z-50 w-full transition-transform duration-300 ${show ? 'translate-y-0' : '-translate-y-full'}`}
+            className={`duration-400 fixed top-0 z-50 w-full transition-transform ${show ? 'translate-y-0' : '-translate-y-[120%]'}`}
         >
             <TopBar />
 
             <div
-                className={`h-14 w-full ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
+                className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 lg:h-fit lg:py-[14px] xl:px-0 ${hasBorder ? 'bg-dark backdrop-blur-[18px] lg:bg-transparent' : 'bg-transparent'}`}
                 ref={navRef}
             >
-                <MobileNav
-                    isExpanded={isExpanded}
-                    toogleNav={toogleNav}
-                    closeNav={closeNav}
-                />
+                <Nav isExpanded={isExpanded} toogleNav={toogleNav} />
             </div>
             {isExpanded &&
                 createPortal(
