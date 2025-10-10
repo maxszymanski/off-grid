@@ -10,8 +10,8 @@ function Header() {
             <Image
                 alt="card"
                 width={809}
-                height={584}
-                className="absolute -top-0 left-1/2 z-[100] h-auto -translate-x-1/2"
+                height={1071}
+                className="-top-50 pointer-events-none absolute left-1/2 max-h-[650px] min-w-[500px] max-w-[500px] -translate-x-1/3 md:-top-[490px] md:h-auto md:max-h-fit md:max-w-full"
                 priority
                 quality={100}
                 src={CardSm}

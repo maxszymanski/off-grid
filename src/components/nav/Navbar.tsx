@@ -54,7 +54,7 @@ function Navbar() {
             <TopBar />
 
             <div
-                className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 lg:h-fit lg:py-[14px] xl:px-0 ${hasBorder ? 'bg-dark backdrop-blur-[18px] lg:bg-transparent' : 'bg-transparent'}`}
+                className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 lg:h-fit lg:py-[14px] xl:px-0 ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
                 ref={navRef}
             >
                 <Nav isExpanded={isExpanded} toogleNav={toogleNav} />
