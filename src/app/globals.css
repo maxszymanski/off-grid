@@ -5,6 +5,8 @@
     --color-primary: #f5f5f5;
     --color-dark: #17181c80;
     --color-dark2: #0d0e10;
+    --color-dark3: #090a0b;
+    --color-dark4: #0e0f11;
 
     --font-canela: var(--font-canela), sans-serif;
 
@@ -195,6 +197,16 @@
         0px 2.77px 2.21px 0px rgba(0, 0, 0, 0.1197);
 }
 
+.accordeon-icon {
+    box-shadow:
+        0px 2.08px 2.99px 0px #0000001b,
+        0px 4.99px 7.18px 0px #00000026,
+        0px 9.39px 13.52px 0px #0000002f,
+        0px 16.75px 24.12px 0px #00000038,
+        0px 31.33px 45.12px 0px #00000044,
+        0px 75px 108px 0px #0000005e;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -212,4 +224,13 @@
         0px 22.34px 28.37px 0px #ffffff98,
         0px 41.78px 53.06px 0px #ffffffb7,
         0px 100px 127px 0px #ffffff;
+}
+.footer-elipse-shadow {
+    box-shadow:
+        0px 1.16px 2.66px 0px rgba(96, 249, 7, 0.1546),
+        0px 2.79px 6.38px 0px rgba(96, 249, 7, 0.2221),
+        0px 5.26px 12.02px 0px rgba(96, 249, 7, 0.275),
+        0px 9.38px 21.44px 0px rgba(96, 249, 7, 0.3279),
+        0px 17.55px 40.11px 0px rgba(96, 249, 7, 0.3954),
+        0px 42px 96px 0px rgba(96, 249, 7, 0.55);
 }

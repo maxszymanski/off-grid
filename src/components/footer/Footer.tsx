@@ -1,10 +1,14 @@
+import Image from 'next/image'
 import StyledLinkBox from '../ui/StyledLinkBox'
 import FooterLists from './FooterLists'
+import HeroSm from '@/assets/footer-hero-sm.png'
+import HeroLarge from '@/assets/footer-hero.png'
+import FooterInfo from './FooterInfo'
 
 function Footer() {
     return (
-        <footer className="wrapper px-4 pb-2 lg:pb-5">
-            <div className="mb-8 text-center">
+        <footer className="relative overflow-x-hidden">
+            <div className="mb-8 px-4 text-center">
                 <h2 className="section-title pb-[22px]">
                     Your Crypto, Your Control.
                 </h2>
@@ -16,10 +20,34 @@ function Footer() {
                     </span>
                 </p>
             </div>
-            <StyledLinkBox />
-            <div className="pt-32">
-                <FooterLists />
+            <div className="px-4">
+                <StyledLinkBox />
             </div>
+            <div className="wrapper relative -mt-2 flex flex-col justify-end px-4 pt-[260px] sm:-mt-3 sm:aspect-[1170/780] md:max-h-[780px] xl:px-0">
+                <Image
+                    src={HeroSm}
+                    width={439}
+                    height={390}
+                    alt=""
+                    className="pointer-events-none absolute left-2 top-0 z-10 max-h-[780px] w-full object-contain md:hidden"
+                    quality={100}
+                />
+                <Image
+                    src={HeroLarge}
+                    width={1170}
+                    height={780}
+                    alt=""
+                    className="pointer-events-none absolute -right-6 top-0 z-10 hidden max-h-[780px] w-full max-w-[1170px] object-contain md:block"
+                    quality={100}
+                />
+                <div className="relative z-20 flex flex-col gap-12 border-b border-white/15 pb-12 md:mb-[13px] md:flex-row md:items-center md:gap-3 md:pb-10 xl:gap-[100px]">
+                    <FooterInfo />
+                    <FooterLists />
+                </div>
+            </div>
+            <p className="text-primary/70 px-4 pb-2 pt-5 text-center text-xs leading-[130%] md:pb-5 md:pt-[7px]">
+                © 2024 Off Grid LLC. All rights reserved.
+            </p>
         </footer>
     )
 }

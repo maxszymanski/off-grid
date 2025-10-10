@@ -49,7 +49,7 @@ function Navbar() {
 
     return (
         <nav
-            className={`duration-400 fixed top-0 z-50 w-full transition-transform ${show ? 'translate-y-0' : '-translate-y-[120%]'}`}
+            className={`duration-400 fixed top-0 ${isExpanded || hasBorder ? 'z-[60]' : 'z-40'} w-full transition-transform ${show ? 'translate-y-0' : '-translate-y-[120%]'}`}
         >
             <TopBar />
 
@@ -61,7 +61,7 @@ function Navbar() {
             </div>
             {isExpanded &&
                 createPortal(
-                    <div className="bg-dark/40 fixed inset-0 z-40 backdrop-blur-sm lg:hidden"></div>,
+                    <div className="bg-dark/40 fixed inset-0 z-[55] backdrop-blur-sm lg:hidden"></div>,
                     document.body
                 )}
         </nav>

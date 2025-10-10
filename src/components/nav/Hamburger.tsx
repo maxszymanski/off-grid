@@ -10,7 +10,7 @@ function Hamburger({
 }) {
     return (
         <button
-            className="my-shadow hamburger-linear hover:bg-dark/70 relative flex size-14 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-[14px] mix-blend-plus-lighter transition-colors duration-300 lg:hidden"
+            className="my-shadow hamburger-linear hover:bg-dark/70 relative z-[40] flex size-14 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-[14px] mix-blend-plus-lighter transition-colors duration-300 lg:hidden"
             aria-label="open menu"
             onClick={onClick}
         >

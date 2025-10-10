@@ -35,10 +35,10 @@ const lists = [
 
 function FooterLists() {
     return (
-        <div className="flex w-full flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:justify-evenly lg:justify-end lg:gap-20 xl:gap-[120px]">
+        <div className="flex w-full flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:justify-evenly lg:justify-end lg:gap-20 xl:gap-[100px]">
             {lists.map((list) => (
                 <div
-                    className="sm:min-w-1/5 flex flex-col gap-4 lg:gap-5"
+                    className="sm:min-w-1/5 flex flex-col gap-4 lg:gap-5 xl:min-w-[183px]"
                     key={list.title}
                 >
                     <h2 className="text-sm font-medium leading-[130%]">
@@ -46,7 +46,7 @@ function FooterLists() {
                     </h2>
                     <ul className="flex flex-col gap-3">
                         {list.list.map((l, i) => (
-                            <li key={i}>
+                            <li key={i} className="flex h-[18px] items-center">
                                 <Link
                                     href={l.href}
                                     className="text-primary/70 hover:text-primary text-sm leading-[130%] transition-colors duration-300"
