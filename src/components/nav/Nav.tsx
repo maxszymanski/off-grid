@@ -20,11 +20,11 @@ function Nav({ toogleNav, isExpanded }: NavProps) {
             >
                 <NavList />
                 <div className="lg:hidden">
-                    <StyledLink btnName="Join the Waitlist" />
+                    <StyledLink name="Join the Waitlist" />
                 </div>
             </div>
             <div className="hidden lg:block">
-                <StyledLink btnName="Join the Waitlist" />
+                <StyledLink name="Join the Waitlist" />
             </div>
         </div>
     )
