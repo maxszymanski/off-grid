@@ -49,7 +49,7 @@ function Navbar() {
 
     return (
         <nav
-            className={`duration-400 fixed top-0 ${isExpanded || hasBorder ? 'z-[60]' : 'z-40'} w-full transition-transform ${show ? 'translate-y-0' : '-translate-y-[120%]'}`}
+            className={`duration-400 fixed top-0 ${isExpanded || hasBorder ? 'z-[60]' : 'z-40'} ${hasBorder ? 'backdrop-blur-sm' : ''} w-full transition-transform ${show ? 'translate-y-0' : '-translate-y-[120%]'}`}
         >
             <TopBar />
 

@@ -2,10 +2,12 @@ import HeaderBg from '@/assets/hero-bg.webp'
 import Card from '@/assets/card.png'
 import Image from 'next/image'
 import StyledLinkBox from '../ui/StyledLinkBox'
+import MiniCard from '../ui/MiniCard'
+import HeaderLogos from './HeaderLogos'
 function Header() {
     return (
         <header
-            className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden bg-cover bg-center lg:min-h-[1022px]"
+            className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden bg-cover bg-center lg:min-h-[1022px] 2xl:bg-bottom"
             style={{ backgroundImage: `url('${HeaderBg.src}')` }}
         >
             <Image
@@ -18,8 +20,11 @@ function Header() {
                 src={Card}
             />
             <div className="mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
-                <h1 className="font-canela mb-5 text-[38px] leading-[100%] md:text-[64px] md:leading-[100%]">
-                    Forget the system <br /> keep your freedom
+                <h1 className="font-canela mb-7 text-nowrap text-[38px] leading-[100%] md:text-[64px] md:leading-[100%]">
+                    Forget the system <br />{' '}
+                    <span className="mt-2.5 inline-flex items-end gap-2">
+                        keep your <MiniCard /> freedom
+                    </span>
                 </h1>
                 <p className="text-primary/70 mx-auto mb-8 max-w-[367px] leading-[130%] md:mb-12">
                     Privacy-first crypto cards and instant payments. No KYC, no
@@ -27,7 +32,7 @@ function Header() {
                 </p>
                 <StyledLinkBox />
             </div>
-            <div className="h-[50px] w-full lg:mt-32"></div>
+            <HeaderLogos />
         </header>
     )
 }

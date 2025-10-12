@@ -6,7 +6,7 @@
     --color-dark: #17181c80;
     --color-dark2: #0d0e10;
     --color-dark3: #090a0b;
-    --color-dark4: #0e0f11;
+    --color-dark4:  ;
 
     --font-canela: var(--font-canela), sans-serif;
 
@@ -26,6 +26,16 @@
 
 .my-shadow {
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.6) inset;
+}
+
+.my-card-shadow {
+    box-shadow:
+        0px 1.9px 2.74px 0px rgba(0, 0, 0, 0.104),
+        0px 4.57px 6.58px 0px rgba(0, 0, 0, 0.1494),
+        0px 8.61px 12.4px 0px rgba(0, 0, 0, 0.185),
+        0px 15.36px 22.11px 0px rgba(0, 0, 0, 0.2206),
+        0px 28.72px 41.36px 0px rgba(0, 0, 0, 0.266),
+        0px 68.75px 99px 0px rgba(0, 0, 0, 0.37);
 }
 
 .hamburger-shadow {
@@ -48,6 +58,65 @@
             rgba(255, 255, 255, 0) 100%
         ),
         rgba(14, 15, 17, 1);
+}
+
+.header-logos::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.15) 20%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.15) 80%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
+.top-corner::after,
+.top-corner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 17.97% 14.06%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+.bottom-corner::after,
+.bottom-corner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 82.03% 85.94%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hamburger-linear::after {

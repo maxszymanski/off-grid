@@ -9,7 +9,7 @@ function FaqSection() {
                     Questions? <br />
                     We&apos;ve got answers.
                 </h2>
-                <p className="section-subTitle max-w-[298px] sm:max-w-[438px]">
+                <p className="section-subtitle max-w-[298px] sm:max-w-[438px]">
                     Everything you need to know about Off Grid’s privacy-first
                     approach to crypto spending.
                 </p>
@@ -17,7 +17,7 @@ function FaqSection() {
             <FaqQuestions />
             <div className="flex flex-col items-center text-center">
                 {' '}
-                <p className="section-subTitle text-primary/70 mb-6 lg:mb-8">
+                <p className="section-subtitle mb-6 lg:mb-8">
                     Still have questions?
                 </p>
                 <StyledLink name="Contact Support" href="/contact" />
