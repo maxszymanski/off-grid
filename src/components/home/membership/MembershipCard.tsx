@@ -5,7 +5,8 @@ import StyledLink from '@/components/ui/StyledLink'
 
 interface CardProps {
     imageSrc: string
-    price: string
+    monthPrice: string
+    yearPrice: string
     per: 'mth' | 'year'
     title: string
     list: string[]
@@ -15,7 +16,8 @@ interface CardProps {
 
 function MembershipCard({
     imageSrc,
-    price,
+    monthPrice,
+    yearPrice,
     per,
     index,
     title,
@@ -42,8 +44,8 @@ function MembershipCard({
             </div>
             <div className="flex flex-col gap-6 px-3 xl:p-4">
                 <p className="leading-[130%] xl:leading-[130%]">
-                    <span className="text-xl font-medium xl:text-2xl">
-                        ${price}/{per}{' '}
+                    <span className={`} text-xl font-medium xl:text-2xl`}>
+                        ${per === 'mth' ? monthPrice : yearPrice}/{per}{' '}
                     </span>{' '}
                     <span className="text-primary/70 text-sm xl:text-base">
                         {title}{' '}

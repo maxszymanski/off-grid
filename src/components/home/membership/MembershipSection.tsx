@@ -11,11 +11,13 @@ import MembershipCard from './MembershipCard'
 import StandardCard from '@/assets/cards-bg/standard-cart.webp'
 import PlatinumCard from '@/assets/cards-bg/platinum-card.webp'
 import EliteCard from '@/assets/cards-bg/elite-card.webp'
+import SwitchButton from '@/components/ui/SwitchButton'
 
 const cards = [
     {
         imageSrc: StandardCard.src,
-        price: '0',
+        monthPrice: '0',
+        yearPrice: '0',
         title: 'Standard Card',
         list: [
             'Spend up to $4,000/mo with no KYC',
@@ -26,7 +28,8 @@ const cards = [
     },
     {
         imageSrc: PlatinumCard.src,
-        price: '99',
+        monthPrice: '99',
+        yearPrice: '1099',
         title: 'Premium Card',
         list: [
             '2% crypto cashback — BTC, ETH, or SOL',
@@ -38,7 +41,8 @@ const cards = [
     },
     {
         imageSrc: EliteCard.src,
-        price: '0',
+        monthPrice: '299',
+        yearPrice: '3499',
         title: 'Standard Card',
         list: [
             '3% cashback in any supported cryptocurrency',
@@ -54,7 +58,7 @@ const cards = [
 
 function MembershipSection() {
     const [isEnabled, setIsEnabled] = useState(false)
-    const [per, setPer] = useState<'mtn' | 'year'>('mtn')
+    const [per, setPer] = useState<'mth' | 'year'>('mth')
 
     useEffect(() => {
         const checkWidth = () => setIsEnabled(window.innerWidth < 1024)
@@ -97,13 +101,21 @@ function MembershipSection() {
         emblaApi.on('reInit', updateScrollButtons)
     }, [emblaApi, updateScrollButtons])
 
+    const handleSwitch = () => {
+        if (per === 'mth') {
+            setPer('year')
+        } else {
+            setPer('mth')
+        }
+    }
+
     return (
         <section className="wrapper relative -mt-1 bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
             <Image
                 src={LightSm}
                 width={LightSm.width}
                 height={LightSm.height}
-                className={`absolute left-1/2 top-0 z-[1] hidden -translate-x-1/2`}
+                className={`absolute left-1/2 top-0 z-[1] min-h-[646px] -translate-x-1/2 lg:hidden`}
                 alt=""
                 quality={100}
             />
@@ -111,7 +123,7 @@ function MembershipSection() {
                 src={Light}
                 width={Light.width}
                 height={Light.height}
-                className={`hidden:sm:block absolute left-1/2 top-0 z-[1] -translate-x-1/2`}
+                className={`absolute left-1/2 top-0 z-[1] hidden min-h-[673px] -translate-x-1/2 lg:block`}
                 alt=""
                 quality={100}
             />
@@ -127,13 +139,16 @@ function MembershipSection() {
                         rewards.
                     </p>
                 </div>
-                <div className="mb-[26px] mt-8 flex items-center justify-center gap-2 px-4 font-medium md:mb-[46px] md:mt-[60px]">
+                <div className="mb-[26px] mt-8 flex items-center justify-center gap-5 px-4 font-medium md:mb-[46px] md:mt-[60px]">
                     <p
-                        className={`${per === 'mtn' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
+                        className={`${per === 'mth' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
                     >
                         Monthly
                     </p>
-                    <button className="switch relative h-7 w-[64px] rounded-full"></button>
+                    <SwitchButton
+                        isMonth={per === 'mth'}
+                        onClick={handleSwitch}
+                    />
 
                     <p
                         className={`${per === 'year' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
@@ -162,8 +177,9 @@ function MembershipSection() {
                                     imageSrc={card.imageSrc}
                                     linkHref={card.linkHref}
                                     list={card.list}
-                                    per="mth"
-                                    price={card.price}
+                                    per={per}
+                                    monthPrice={card.monthPrice}
+                                    yearPrice={card.yearPrice}
                                     title={card.title}
                                 />
                             ))}
