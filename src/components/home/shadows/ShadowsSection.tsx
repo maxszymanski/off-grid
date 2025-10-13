@@ -2,7 +2,7 @@ import StyledLinkBox from '@/components/ui/StyledLinkBox'
 
 function ShadowsSection() {
     return (
-        <section className="-m-1.5">
+        <section className="relative z-10">
             <div className="wrapper">
                 <div className="mb-[42px] flex flex-col items-center px-4 text-center md:mb-[60px] xl:px-0">
                     <h2 className="section-title mb-[22px]">

@@ -29,6 +29,15 @@ const cards = [
 ]
 
 function EconomySection() {
+    const [isEnabled, setIsEnabled] = useState(false)
+
+    useEffect(() => {
+        const checkWidth = () => setIsEnabled(window.innerWidth < 1280)
+        checkWidth()
+        window.addEventListener('resize', checkWidth)
+        return () => window.removeEventListener('resize', checkWidth)
+    }, [])
+
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         dragFree: true,
@@ -78,7 +87,7 @@ function EconomySection() {
                 </div>
                 <div
                     className="w-full overflow-hidden px-4 xl:px-0"
-                    ref={emblaRef}
+                    ref={isEnabled ? emblaRef : null}
                 >
                     <div className="flex gap-4 xl:justify-between">
                         {cards.map((card, idx) => (

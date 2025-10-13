@@ -6,7 +6,7 @@
     --color-dark: #17181c80;
     --color-dark2: #0d0e10;
     --color-dark3: #090a0b;
-    --color-dark4:  ;
+    --color-dark4: #0e0f11;
 
     --font-canela: var(--font-canela), sans-serif;
 
@@ -15,6 +15,14 @@
 
 .wrapper {
     @apply mx-auto w-full max-w-[1240px];
+}
+
+.membership-gradient {
+    background: radial-gradient(
+        53.54% 39.11% at 46.81% -0.04%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 
 .section-title {
@@ -50,6 +58,7 @@
         0px 3px 3px 0px rgba(0, 0, 0, 0.14),
         0px 2.77px 2.21px 0px rgba(0, 0, 0, 0.1197);
 }
+
 .hamburger {
     background:
         radial-gradient(
@@ -104,7 +113,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1px;
+    padding: 0.5px;
     background: radial-gradient(
         39.8% 39.84% at 82.03% 85.94%,
         #ffffff 0%,
@@ -117,6 +126,48 @@
     mask-composite: exclude;
     pointer-events: none;
     z-index: 1;
+}
+.border-gradient-one::after,
+.border-gradient-one::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.5px;
+    background: radial-gradient(
+        42.54% 39.11% at 50.81% -4.04%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: lighten;
+    backdrop-filter: blur(2px);
+}
+.border-gradient-two::after,
+.border-gradient-two::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.8px;
+    background: radial-gradient(
+        42.54% 39.11% at 50.81% -4.04%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .hamburger-linear::after {

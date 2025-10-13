@@ -4,9 +4,63 @@ import ScrollButton from '../info/ScrollButton'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import Light from '@/assets/membership-light.webp'
+import Gradient from '@/assets/gradient.png'
 import Image from 'next/image'
+import MembershipCard from './MembershipCard'
+import StandardCard from '@/assets/cards-bg/standard-cart.webp'
+import PlatinumCard from '@/assets/cards-bg/platinum-card.webp'
+import EliteCard from '@/assets/cards-bg/elite-card.webp'
+
+const cards = [
+    {
+        imageSrc: StandardCard.src,
+        price: '0',
+        title: 'Standard Card',
+        list: [
+            'Spend up to $4,000/mo with no KYC',
+            '1% cashback in Bitcoin on all purchases',
+            'Extra 0.5% rewards on transactions over $1,000',
+        ],
+        linkHref: '/',
+    },
+    {
+        imageSrc: PlatinumCard.src,
+        price: '99',
+        title: 'Premium Card',
+        list: [
+            '2% crypto cashback — BTC, ETH, or SOL',
+            'Earn yield automatically on cashback balance',
+            '5% back at select premium retailers',
+            'Additional rewards for holding crypto balances',
+        ],
+        linkHref: '/',
+    },
+    {
+        imageSrc: EliteCard.src,
+        price: '0',
+        title: 'Standard Card',
+        list: [
+            '3% cashback in any supported cryptocurrency',
+            'Exclusive merchant partnerships and discounts',
+            'Auto-compound rewards in DeFi protocols',
+            'Access to crypto events and meetups',
+            'Concirge services',
+            'Custom card design',
+        ],
+        linkHref: '/',
+    },
+]
 
 function MembershipSection() {
+    const [isEnabled, setIsEnabled] = useState(false)
+
+    useEffect(() => {
+        const checkWidth = () => setIsEnabled(window.innerWidth < 1280)
+        checkWidth()
+        window.addEventListener('resize', checkWidth)
+        return () => window.removeEventListener('resize', checkWidth)
+    }, [])
+
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         dragFree: true,
@@ -42,13 +96,14 @@ function MembershipSection() {
     }, [emblaApi, updateScrollButtons])
 
     return (
-        <section className="wrapper relative bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
+        <section className="wrapper relative -mt-1 bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
             <Image
                 src={Light}
                 width={Light.width}
                 height={Light.height}
                 className={`absolute left-1/2 top-0 z-[1] -translate-x-1/2`}
                 alt=""
+                quality={100}
             />
             <div className="relative z-[2]">
                 <div className="mb-[42px] flex flex-col items-center px-4 text-center md:mb-[60px] xl:px-0">
@@ -61,16 +116,32 @@ function MembershipSection() {
                         rewards.
                     </p>
                 </div>
-                <div className="mb-[46px] h-7 w-full"></div>
-                <div>
+                <div className="mt-[38px] h-7 w-full"></div>
+                <div className="relative pt-2">
+                    <Image
+                        src={Gradient}
+                        width={Gradient.width}
+                        height={Gradient.height}
+                        className={`absolute -top-1.5 left-1/2 -translate-x-1/2`}
+                        alt=""
+                    />
                     <div
-                        className="w-full overflow-hidden px-4 xl:px-0"
-                        ref={emblaRef}
+                        className="bg-blackBg relative z-[2] mt-2 w-full overflow-x-hidden px-4 xl:px-0"
+                        ref={isEnabled ? emblaRef : null}
                     >
                         <div className="flex gap-4 xl:justify-between">
-                            <div className="bg-dark3 h-[300px] w-[300px] shrink-0"></div>
-                            <div className="bg-dark3 h-[300px] w-[300px] shrink-0"></div>
-                            <div className="bg-dark3 h-[300px] w-[300px] shrink-0"></div>
+                            {cards.map((card, index) => (
+                                <MembershipCard
+                                    key={index}
+                                    index={index}
+                                    imageSrc={card.imageSrc}
+                                    linkHref={card.linkHref}
+                                    list={card.list}
+                                    per="mth"
+                                    price={card.price}
+                                    title={card.title}
+                                />
+                            ))}
                         </div>
                     </div>
                     <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 xl:hidden">
@@ -88,7 +159,7 @@ function MembershipSection() {
                 </div>
                 <div className="hidden w-full px-4 lg:block xl:px-0">
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
-                        Earn commissions, bonuses, and perks
+                        Earn commissions, bonuses, and perks{' '}
                         <span className="text-primary font-medium">
                             for every referral.
                         </span>
