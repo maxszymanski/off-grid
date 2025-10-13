@@ -76,6 +76,26 @@
         rgba(255, 255, 255, 0) 100%
     );
 }
+.switch::after,
+.switch::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.5px;
+    background: radial-gradient(
+        12.44% 51.67% at 14.95% 100%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
 
 .header-logos::after {
     content: '';

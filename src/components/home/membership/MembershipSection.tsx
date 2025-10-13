@@ -4,6 +4,7 @@ import ScrollButton from '../info/ScrollButton'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import LightSm from '@/assets/membership-light-sm.webp'
+import Light from '@/assets/membership-light.png'
 import Gradient from '@/assets/gradient.png'
 import Image from 'next/image'
 import MembershipCard from './MembershipCard'
@@ -102,7 +103,15 @@ function MembershipSection() {
                 src={LightSm}
                 width={LightSm.width}
                 height={LightSm.height}
-                className={`absolute left-1/2 top-0 z-[1] -translate-x-1/2`}
+                className={`absolute left-1/2 top-0 z-[1] hidden -translate-x-1/2`}
+                alt=""
+                quality={100}
+            />
+            <Image
+                src={Light}
+                width={Light.width}
+                height={Light.height}
+                className={`hidden:sm:block absolute left-1/2 top-0 z-[1] -translate-x-1/2`}
                 alt=""
                 quality={100}
             />
@@ -118,7 +127,7 @@ function MembershipSection() {
                         rewards.
                     </p>
                 </div>
-                <div className="mb-[34px] mt-8 flex items-center justify-center gap-2 px-4 font-medium md:mb-[52px] md:mt-[60px]">
+                <div className="mb-[26px] mt-8 flex items-center justify-center gap-2 px-4 font-medium md:mb-[46px] md:mt-[60px]">
                     <p
                         className={`${per === 'mtn' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
                     >
