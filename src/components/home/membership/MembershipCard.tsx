@@ -23,12 +23,12 @@ function MembershipCard({
     linkHref,
 }: CardProps) {
     return (
-        <div className="bg-dark4 relative z-[1] flex h-fit w-[322px] shrink-0 flex-col gap-5 rounded-[14px] p-1 pb-4 xl:w-[403px] xl:gap-6 xl:rounded-2xl xl:p-2 xl:pb-6">
+        <div className="bg-dark4 relative z-[1] flex h-fit min-w-[322px] shrink-0 flex-col gap-5 rounded-[14px] p-1 pb-4 transition-colors duration-300 hover:bg-[#18191c] lg:shrink xl:w-[403px] xl:gap-6 xl:rounded-2xl xl:p-2 xl:pb-6">
             <div
-                className={`border-gradient-one absolute inset-0 rounded-[14px] xl:rounded-2xl ${index === 0 && 'block lg:hidden'} ${index === 1 && 'hidden lg:block'} ${index === 2 && 'hidden'}`}
+                className={`border-gradient-one absolute inset-0 rounded-[14px] xl:rounded-2xl ${index === 0 && 'block sm:hidden'} ${index === 1 && 'hidden sm:block'} ${index === 2 && 'hidden'}`}
             ></div>
             <div
-                className={`border-gradient-two absolute inset-0 rounded-[14px] xl:rounded-2xl ${index === 0 && 'block lg:hidden'} ${index === 1 && 'hidden lg:block'} ${index === 2 && 'hidden'}`}
+                className={`border-gradient-two absolute inset-0 rounded-[14px] xl:rounded-2xl ${index === 0 && 'block sm:hidden'} ${index === 1 && 'hidden sm:block'} ${index === 2 && 'hidden'}`}
             ></div>
 
             <div className="hamburger-shadow overflow-hidden rounded-[10px]">
@@ -40,7 +40,7 @@ function MembershipCard({
                     quality={100}
                 />
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 px-3 xl:p-4">
                 <p className="leading-[130%] xl:leading-[130%]">
                     <span className="text-xl font-medium xl:text-2xl">
                         ${price}/{per}{' '}

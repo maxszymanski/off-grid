@@ -3,7 +3,7 @@ import StyledLink from '@/components/ui/StyledLink'
 import ScrollButton from '../info/ScrollButton'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
-import Light from '@/assets/membership-light.webp'
+import LightSm from '@/assets/membership-light-sm.webp'
 import Gradient from '@/assets/gradient.png'
 import Image from 'next/image'
 import MembershipCard from './MembershipCard'
@@ -53,9 +53,10 @@ const cards = [
 
 function MembershipSection() {
     const [isEnabled, setIsEnabled] = useState(false)
+    const [per, setPer] = useState<'mtn' | 'year'>('mtn')
 
     useEffect(() => {
-        const checkWidth = () => setIsEnabled(window.innerWidth < 1280)
+        const checkWidth = () => setIsEnabled(window.innerWidth < 1024)
         checkWidth()
         window.addEventListener('resize', checkWidth)
         return () => window.removeEventListener('resize', checkWidth)
@@ -98,13 +99,14 @@ function MembershipSection() {
     return (
         <section className="wrapper relative -mt-1 bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
             <Image
-                src={Light}
-                width={Light.width}
-                height={Light.height}
+                src={LightSm}
+                width={LightSm.width}
+                height={LightSm.height}
                 className={`absolute left-1/2 top-0 z-[1] -translate-x-1/2`}
                 alt=""
                 quality={100}
             />
+
             <div className="relative z-[2]">
                 <div className="mb-[42px] flex flex-col items-center px-4 text-center md:mb-[60px] xl:px-0">
                     <h2 className="section-title mb-[22px]">
@@ -116,7 +118,20 @@ function MembershipSection() {
                         rewards.
                     </p>
                 </div>
-                <div className="mt-[38px] h-7 w-full"></div>
+                <div className="mb-[34px] mt-8 flex items-center justify-center gap-2 px-4 font-medium md:mb-[52px] md:mt-[60px]">
+                    <p
+                        className={`${per === 'mtn' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
+                    >
+                        Monthly
+                    </p>
+                    <button className="switch relative h-7 w-[64px] rounded-full"></button>
+
+                    <p
+                        className={`${per === 'year' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
+                    >
+                        Yearly
+                    </p>
+                </div>
                 <div className="relative pt-2">
                     <Image
                         src={Gradient}
@@ -125,11 +140,12 @@ function MembershipSection() {
                         className={`absolute -top-1.5 left-1/2 -translate-x-1/2`}
                         alt=""
                     />
+
                     <div
                         className="bg-blackBg relative z-[2] mt-2 w-full overflow-x-hidden px-4 xl:px-0"
                         ref={isEnabled ? emblaRef : null}
                     >
-                        <div className="flex gap-4 xl:justify-between">
+                        <div className="flex gap-4 lg:justify-between">
                             {cards.map((card, index) => (
                                 <MembershipCard
                                     key={index}
@@ -144,7 +160,7 @@ function MembershipSection() {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 xl:hidden">
+                    <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 lg:hidden">
                         <ScrollButton
                             onClick={scrollPrev}
                             disabled={!canScrollPrev}
