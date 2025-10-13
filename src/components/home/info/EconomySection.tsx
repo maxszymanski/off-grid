@@ -65,18 +65,21 @@ function EconomySection() {
 
     return (
         <section className="pb-8 lg:pb-[120px]">
-            <div className="wrapper px-4 xl:px-0">
-                <div className="mb-[42px] flex flex-col items-center text-left sm:text-center md:mb-[84px]">
+            <div className="wrapper">
+                <div className="mb-[42px] flex flex-col items-center px-4 text-left sm:text-center md:mb-[84px] 2xl:px-0">
                     <h2 className="section-title mb-[22px]">
-                        Spend without limits
+                        Built for the new economy.
                     </h2>
                     <p className="section-subtitle max-w-[462px]">
-                        A card built for a world that moves fast. Spend your
-                        crypto instantly — anywhere. No KYC. No delays. No
-                        questions.
+                        Whether you&apos;re flipping memes, trading NFTs,
+                        farming yields, or living borderless — Off Grid keeps
+                        you liquid, instantly.
                     </p>
                 </div>
-                <div className="w-full overflow-hidden" ref={emblaRef}>
+                <div
+                    className="w-full overflow-hidden px-4 xl:px-0"
+                    ref={emblaRef}
+                >
                     <div className="flex gap-4 xl:justify-between">
                         {cards.map((card, idx) => (
                             <EconomyCard
@@ -88,7 +91,7 @@ function EconomySection() {
                         ))}
                     </div>
                 </div>
-                <div className="mt-[42px] flex w-full items-center justify-end gap-2 xl:hidden">
+                <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 xl:hidden">
                     <ScrollButton
                         onClick={scrollPrev}
                         disabled={!canScrollPrev}
