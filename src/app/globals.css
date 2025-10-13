@@ -113,7 +113,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 0.5px;
+    padding: 1px;
     background: radial-gradient(
         39.8% 39.84% at 82.03% 85.94%,
         #ffffff 0%,
