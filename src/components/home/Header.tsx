@@ -15,7 +15,7 @@ function Header() {
                 alt="card"
                 width={809}
                 height={1071}
-                className="pointer-events-none absolute -top-[212px] left-1/2 z-[41] max-h-[650px] min-w-[500px] max-w-[500px] -translate-x-1/3 md:-top-[490px] md:h-auto md:max-h-fit md:max-w-full"
+                className="!pointer-events-none absolute -top-[212px] left-1/2 z-[41] max-h-[650px] min-w-[500px] max-w-[500px] -translate-x-1/3 md:-top-[490px] md:h-auto md:max-h-fit md:max-w-full"
                 priority
                 quality={100}
                 src={Card}
