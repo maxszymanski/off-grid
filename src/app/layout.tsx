@@ -4,6 +4,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 import Navbar from '@/components/nav/Navbar'
 import Footer from '@/components/footer/Footer'
+import AosProvider from '@/components/ui/AosProvider'
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -27,12 +28,12 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="">
             <body
-                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary antialiased`}
+                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary w-full overflow-x-hidden antialiased`}
             >
                 <Navbar />
-                {children}
+                <AosProvider>{children}</AosProvider>
 
                 <Footer />
             </body>

@@ -38,9 +38,12 @@ const cards = [
 
 function PrivacySection() {
     return (
-        <section className="pb-20 lg:pb-[120px]">
+        <section className="w-full overflow-hidden pb-20 lg:pb-[120px]">
             <div className="wrapper px-4 xl:px-0">
-                <div className="mb-[42px] flex flex-col items-center text-center md:mb-[60px]">
+                <div
+                    className="mb-[42px] flex flex-col items-center text-center md:mb-[60px]"
+                    data-aos="fade-up"
+                >
                     <h2 className="section-title mb-[22px]">
                         Privacy by design
                     </h2>
@@ -57,6 +60,7 @@ function PrivacySection() {
                     {cards.map((card, idx) => (
                         <PrivacyCard
                             key={idx}
+                            idx={idx}
                             imageSrc={card.image}
                             title={card.title}
                             description={card.description}
@@ -64,7 +68,7 @@ function PrivacySection() {
                         />
                     ))}
                 </div>
-                <div className="w-full">
+                <div className="w-full" data-aos="zoom-in">
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
                         <span className="text-primary font-medium">
                             Privacy isn’t a feature here

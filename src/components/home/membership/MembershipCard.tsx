@@ -25,7 +25,10 @@ function MembershipCard({
     linkHref,
 }: CardProps) {
     return (
-        <div className="bg-dark4 relative z-[1] flex h-fit w-[322px] shrink-0 flex-col gap-5 rounded-[14px] p-1 pb-4 transition-colors duration-300 hover:bg-[#18191c] lg:shrink xl:w-[403px] xl:gap-6 xl:rounded-2xl xl:p-2 xl:pb-6">
+        <div
+            className="bg-dark4 relative z-[1] flex h-fit w-[322px] shrink-0 flex-col gap-5 rounded-[14px] p-1 pb-4 transition-colors duration-300 hover:bg-[#18191c] lg:shrink xl:w-[403px] xl:gap-6 xl:rounded-2xl xl:p-2 xl:pb-6"
+            data-aos="zoom-out"
+        >
             <div
                 className={`border-gradient-one absolute inset-0 rounded-[14px] xl:rounded-2xl ${index === 0 && 'block sm:hidden'} ${index === 1 && 'hidden sm:block'} ${index === 2 && 'hidden'}`}
             ></div>

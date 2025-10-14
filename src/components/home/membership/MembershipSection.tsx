@@ -110,7 +110,7 @@ function MembershipSection() {
     }
 
     return (
-        <section className="wrapper relative -mt-1 bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
+        <section className="wrapper relative -mt-1 w-full overflow-hidden bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
             <Image
                 src={LightSm}
                 width={LightSm.width}
@@ -118,6 +118,7 @@ function MembershipSection() {
                 className={`absolute left-1/2 top-0 z-[1] min-h-[646px] -translate-x-1/2 lg:hidden`}
                 alt=""
                 quality={100}
+                data-aos="zoom-out"
             />
             <Image
                 src={Light}
@@ -126,10 +127,14 @@ function MembershipSection() {
                 className={`absolute left-1/2 top-0 z-[1] hidden min-h-[673px] -translate-x-1/2 lg:block`}
                 alt=""
                 quality={100}
+                data-aos="zoom-out"
             />
 
             <div className="relative z-[2]">
-                <div className="mb-[42px] flex flex-col items-center px-4 text-center md:mb-[60px] xl:px-0">
+                <div
+                    className="mb-[42px] flex flex-col items-center px-4 text-center md:mb-[60px] xl:px-0"
+                    data-aos="fade-up"
+                >
                     <h2 className="section-title mb-[22px]">
                         Choose Your Membership. <br /> Unlock Your Card.
                     </h2>
@@ -139,7 +144,10 @@ function MembershipSection() {
                         rewards.
                     </p>
                 </div>
-                <div className="mb-[26px] mt-8 flex items-center justify-center gap-5 px-4 font-medium md:mb-[46px] md:mt-[60px]">
+                <div
+                    className="mb-[26px] mt-8 flex items-center justify-center gap-5 px-4 font-medium md:mb-[46px] md:mt-[60px]"
+                    data-aos="zoom-in"
+                >
                     <p
                         className={`${per === 'mth' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
                     >
@@ -156,7 +164,7 @@ function MembershipSection() {
                         Yearly
                     </p>
                 </div>
-                <div className="relative pt-2">
+                <div className="relative pt-2" data-aos="zoom-in">
                     <Image
                         src={Gradient}
                         width={Gradient.width}
@@ -166,7 +174,7 @@ function MembershipSection() {
                     />
 
                     <div
-                        className="bg-blackBg relative z-[2] mt-2 w-full overflow-x-hidden px-4 xl:px-0"
+                        className="bg-blackBg relative z-[2] mt-2 w-full overflow-hidden px-4 xl:px-0"
                         ref={isEnabled ? emblaRef : null}
                     >
                         <div className="flex gap-4 lg:justify-between">
@@ -185,7 +193,10 @@ function MembershipSection() {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 lg:hidden">
+                    <div
+                        className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 lg:hidden"
+                        data-aos="fade-left"
+                    >
                         <ScrollButton
                             onClick={scrollPrev}
                             disabled={!canScrollPrev}
@@ -198,7 +209,10 @@ function MembershipSection() {
                         />
                     </div>
                 </div>
-                <div className="hidden w-full px-4 lg:block xl:px-0">
+                <div
+                    className="hidden w-full px-4 lg:block xl:px-0"
+                    data-aos="zoom-in"
+                >
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
                         Earn commissions, bonuses, and perks{' '}
                         <span className="text-primary font-medium">

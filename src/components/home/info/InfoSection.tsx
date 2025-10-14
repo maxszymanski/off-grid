@@ -34,9 +34,12 @@ const cards = [
 
 function InfoSection() {
     return (
-        <section className="py-20 lg:py-[120px]">
+        <section className="overflow-hidden py-20 lg:py-[120px]">
             <div className="wrapper px-4 xl:px-0">
-                <div className="mb-[42px] flex flex-col items-center text-center md:mb-[60px]">
+                <div
+                    className="mb-[42px] flex flex-col items-center text-center md:mb-[60px]"
+                    data-aos="fade-up"
+                >
                     <h2 className="section-title mb-[22px]">
                         Spend without limits
                     </h2>
@@ -46,17 +49,18 @@ function InfoSection() {
                         questions.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
+                <div className="grid w-full grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
                     {cards.map((card, idx) => (
                         <InfoCard
                             key={idx}
+                            idx={idx}
                             imageSrc={card.image}
                             title={card.title}
                             description={card.description}
                         />
                     ))}
                 </div>
-                <div>
+                <div data-aos="zoom-in">
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
                         Your crypto, accepted everywhere —{' '}
                         <span className="text-primary font-medium">

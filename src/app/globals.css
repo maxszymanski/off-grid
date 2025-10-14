@@ -69,35 +69,192 @@
         rgba(14, 15, 17, 1);
 }
 
+.switch::before,
 .switch::after,
-.switch::before {
+.economy-border::before,
+.economy-border::after,
+.top-corner::after,
+.top-corner::before,
+.top-corner-why-us::after,
+.top-corner-why-us::before,
+.bottom-corner::after,
+.bottom-corner::before,
+.bottom-corner-why-us::after,
+.bottom-corner-why-us::before,
+.border-gradient-one::after,
+.border-gradient-one::before,
+.border-gradient-two::after,
+.border-gradient-two::before,
+.hamburger-linear::after,
+.hamburger-linear::before,
+.border-linear-bottom::after,
+.border-linear-top:after,
+.border-linear-bottom::before,
+.border-linear-top::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 0.5px;
-    background: radial-gradient(
-        21.44% 51.67% at 14.95% 0%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     pointer-events: none;
+}
+
+.switch::before,
+.switch::after {
+    padding: 0.5px;
+    background: radial-gradient(
+        21.44% 51.67% at 14.95% 0%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
     z-index: 10;
 }
 
-.header-logos::after {
+.economy-border::before,
+.economy-border::after {
+    padding: 0.8px;
+    background: radial-gradient(
+        38.38% 46.38% at 3.87% 2.14%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 10;
+}
+
+.top-corner::after,
+.top-corner::before {
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 17.97% 14.06%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+.top-corner-why-us::after,
+.top-corner-why-us::before {
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 83.97% 14.06%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+.bottom-corner::after,
+.bottom-corner::before {
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 82.03% 85.94%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+.bottom-corner-why-us::after,
+.bottom-corner-why-us::before {
+    padding: 1px;
+    background: radial-gradient(
+        39.8% 39.84% at 22.03% 85.94%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+.border-gradient-one::after,
+.border-gradient-one::before {
+    padding: 0.5px;
+    background: radial-gradient(
+        42.54% 39.11% at 50.81% -4.04%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    mix-blend-mode: lighten;
+    backdrop-filter: blur(2px);
+}
+.border-gradient-two::after,
+.border-gradient-two::before {
+    padding: 0.8px;
+    background: radial-gradient(
+        42.54% 39.11% at 50.81% -4.04%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+}
+
+.hamburger-linear::after {
+    padding: 1px;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.15)
+        ),
+        radial-gradient(
+            24.23% 35.04% at 21.57% 91.07%,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    z-index: 1;
+}
+.hamburger-linear::before {
+    padding: 1.5px;
+    background: radial-gradient(
+        25.44% 51.67% at 14.95% 100%,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+
+.border-linear-bottom::after,
+.border-linear-top:after {
+    padding: 1.5px;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.15)
+    );
+    z-index: 1;
+}
+.border-linear-bottom::before {
+    padding: 1.5px;
+    background: radial-gradient(
+        30.44% 29.67% at 12.95% 100%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+.border-linear-top::before {
+    padding: 1.5px;
+
+    background: radial-gradient(
+        30.44% 29.67% at 12.95% 0%,
+        #fff 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 1;
+}
+
+.shadow-box::before,
+.header-logos::after,
+.shadow-box::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 100%;
+}
 
+.header-logos::after {
     background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 1) 0%,
@@ -108,12 +265,6 @@
     );
 }
 .shadow-box::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
     pointer-events: none;
 
     background: linear-gradient(
@@ -130,12 +281,6 @@
     opacity: 0;
 }
 .shadow-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
     pointer-events: none;
 
     background: linear-gradient(
@@ -158,239 +303,6 @@
     .shadow-box::before {
         opacity: 0;
     }
-}
-
-.top-corner::after,
-.top-corner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: radial-gradient(
-        39.8% 39.84% at 17.97% 14.06%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.top-corner-why-us::after,
-.top-corner-why-us::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: radial-gradient(
-        39.8% 39.84% at 83.97% 14.06%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.bottom-corner::after,
-.bottom-corner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: radial-gradient(
-        39.8% 39.84% at 82.03% 85.94%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.bottom-corner-why-us::after,
-.bottom-corner-why-us::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: radial-gradient(
-        39.8% 39.84% at 22.03% 85.94%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.border-gradient-one::after,
-.border-gradient-one::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 0.5px;
-    background: radial-gradient(
-        42.54% 39.11% at 50.81% -4.04%,
-        #fff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 2;
-    mix-blend-mode: lighten;
-    backdrop-filter: blur(2px);
-}
-.border-gradient-two::after,
-.border-gradient-two::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 0.8px;
-    background: radial-gradient(
-        42.54% 39.11% at 50.81% -4.04%,
-        #fff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.hamburger-linear::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background:
-        linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0.15)
-        ),
-        radial-gradient(
-            24.23% 35.04% at 21.57% 91.07%,
-            rgba(255, 255, 255, 0.5) 0%,
-            rgba(255, 255, 255, 0) 100%
-        );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.hamburger-linear::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: radial-gradient(
-        25.44% 51.67% at 14.95% 100%,
-        #ffffff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.border-linear-bottom::after,
-.border-linear-top:after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.15),
-        rgba(255, 255, 255, 0.15)
-    );
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.border-linear-bottom::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: radial-gradient(
-        30.44% 29.67% at 12.95% 100%,
-        #fff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
-}
-.border-linear-top::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    /* background: radial-gradient(
-        25.44% 20.67% at 4.95% 0%,
-        #fff 0%,
-        rgba(255, 255, 255, 0) 100%
-    ); */
-    background: radial-gradient(
-        30.44% 29.67% at 12.95% 0%,
-        #fff 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
 }
 
 .fade-in-animation {

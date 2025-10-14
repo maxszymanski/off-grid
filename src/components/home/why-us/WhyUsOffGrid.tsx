@@ -4,7 +4,10 @@ import XCheckIcon from './XCheckIcon'
 
 function WhyUsOffGrid() {
     return (
-        <div className="group relative flex w-[174px] shrink-0 flex-col overflow-hidden rounded-[14px] md:w-full md:max-w-[240px] lg:max-w-[296px] lg:shrink xl:rounded-2xl">
+        <div
+            className="group relative flex w-[174px] shrink-0 flex-col overflow-hidden rounded-[14px] md:w-full md:max-w-[240px] lg:max-w-[296px] lg:shrink xl:rounded-2xl"
+            data-aos="zoom-in"
+        >
             <Image
                 src={Metal}
                 width={Metal.width}

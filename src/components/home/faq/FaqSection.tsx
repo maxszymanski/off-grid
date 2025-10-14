@@ -4,7 +4,10 @@ import FaqQuestions from './FaqQuestions'
 function FaqSection() {
     return (
         <section className="wrapper flex flex-col items-center px-4 pb-20 lg:pb-[120px] xl:px-0">
-            <div className="flex flex-col items-center text-center">
+            <div
+                className="flex flex-col items-center text-center"
+                data-aos="fade-up"
+            >
                 <h2 className="section-title mb-[22px]">
                     Questions? <br />
                     We&apos;ve got answers.
@@ -15,7 +18,10 @@ function FaqSection() {
                 </p>
             </div>
             <FaqQuestions />
-            <div className="flex flex-col items-center text-center">
+            <div
+                className="flex flex-col items-center text-center"
+                data-aos="zoom-in"
+            >
                 {' '}
                 <p className="section-subtitle mb-6 lg:mb-8">
                     Still have questions?

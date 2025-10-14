@@ -1,5 +1,6 @@
 'use client'
 import Crypto from '@/assets/cards-bg/crypto.webp'
+import CryptoSm from '@/assets/cards-bg/crypto-sm.webp'
 import Digital from '@/assets/cards-bg/digital.webp'
 import Founders from '@/assets/cards-bg/founders.webp'
 import EconomyCard from './EconomyCard'
@@ -9,6 +10,7 @@ import ScrollButton from './ScrollButton'
 
 const cards = [
     {
+        smallImage: CryptoSm.src,
         image: Crypto.src,
         title: 'Crypto Traders',
         description:
@@ -73,9 +75,12 @@ function EconomySection() {
     }, [emblaApi, updateScrollButtons])
 
     return (
-        <section className="pb-8 xl:pb-[120px]">
+        <section className="relative z-[0] w-full overflow-x-hidden pb-8 xl:pb-[120px]">
             <div className="wrapper">
-                <div className="mb-[42px] flex flex-col items-center px-4 text-left sm:text-center md:mb-[84px] 2xl:px-0">
+                <div
+                    className="mb-[42px] flex flex-col items-center px-4 text-left sm:text-center md:mb-[84px] 2xl:px-0"
+                    data-aos="fade-up"
+                >
                     <h2 className="section-title mb-[22px]">
                         Built for the new economy.
                     </h2>
@@ -96,11 +101,15 @@ function EconomySection() {
                                 imageSrc={card.image}
                                 title={card.title}
                                 description={card.description}
+                                smallImage={card.smallImage}
                             />
                         ))}
                     </div>
                 </div>
-                <div className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 xl:hidden">
+                <div
+                    className="mt-[42px] flex w-full items-center justify-end gap-2 px-4 xl:hidden"
+                    data-aos="fade-left"
+                >
                     <ScrollButton
                         onClick={scrollPrev}
                         disabled={!canScrollPrev}

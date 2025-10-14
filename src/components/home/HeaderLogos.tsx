@@ -25,11 +25,15 @@ function HeaderLogos() {
 
     return (
         <div className="mt-[80px] flex max-w-[2000px] flex-col gap-8 overflow-x-hidden text-center lg:mt-32 lg:flex-row lg:items-center lg:pl-4 xl:ml-[calc((100vw-1240px)/2)] xl:w-[calc(100vw-((100vw-1240px)/2))] xl:pl-0">
-            <p className="text-primary/70 font-medium leading-[130%] lg:shrink-0 lg:text-left lg:text-2xl lg:leading-[130%] xl:w-[357px]">
+            <p
+                className="text-primary/70 font-medium leading-[130%] lg:shrink-0 lg:text-left lg:text-2xl lg:leading-[130%] xl:w-[357px]"
+                data-aos="fade-right"
+            >
                 Trusted by innovators at
             </p>
             <div
                 className="header-logos pointer-events-none relative w-full overflow-hidden"
+                data-aos="fade-left"
                 ref={emblaRef}
             >
                 <div className="flex items-center">

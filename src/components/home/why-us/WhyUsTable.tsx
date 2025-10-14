@@ -65,7 +65,10 @@ function WhyUsTable() {
                     <WhyUsOther />
                 </div>
             </div>
-            <div className="mt-8 flex w-full items-center justify-end gap-2 px-4 lg:hidden">
+            <div
+                className="mt-8 flex w-full items-center justify-end gap-2 px-4 lg:hidden"
+                data-aos="fade-left"
+            >
                 <ScrollButton
                     onClick={scrollPrev}
                     disabled={!canScrollPrev}

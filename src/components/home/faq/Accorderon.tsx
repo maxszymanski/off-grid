@@ -11,7 +11,10 @@ interface AccorderonProps {
 
 function Accorderon({ onClick, isOpen, title, answer }: AccorderonProps) {
     return (
-        <div className="bg-dark3 w-full overflow-hidden rounded-[14px] md:rounded-2xl">
+        <div
+            className="bg-dark3 w-full overflow-hidden rounded-[14px] md:rounded-2xl"
+            data-aos="zoom-in"
+        >
             <h3 className="w-full">
                 <button
                     className={`hover:bg-dark2/90 group relative flex w-full cursor-pointer items-center justify-between gap-5 rounded-[14px] p-[14px] text-left transition-colors duration-300 md:rounded-2xl md:px-8 md:py-[32.5px]`}

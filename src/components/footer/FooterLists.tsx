@@ -41,10 +41,13 @@ function FooterLists() {
                     className="sm:min-w-1/5 flex flex-col gap-4 lg:gap-5 xl:min-w-[183px]"
                     key={list.title}
                 >
-                    <h2 className="text-sm font-medium leading-[130%]">
+                    <h2
+                        className="text-sm font-medium leading-[130%]"
+                        data-aos="fade-up"
+                    >
                         {list.title}
                     </h2>
-                    <ul className="flex flex-col gap-3">
+                    <ul className="flex flex-col gap-3" data-aos="fade-up">
                         {list.list.map((l, i) => (
                             <li key={i} className="flex h-[18px] items-center">
                                 <Link

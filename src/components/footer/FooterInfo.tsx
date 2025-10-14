@@ -6,8 +6,10 @@ import SocialLink from './SocialLink'
 function FooterInfo() {
     return (
         <div className="max-w-[390px] text-sm leading-[130%]">
-            <Logo />
-            <div className="my-8">
+            <div data-aos="zoom-in">
+                <Logo />
+            </div>
+            <div className="my-8" data-aos="fade-up">
                 <p className="text-primary/70 mb-5">
                     Privacy-first crypto cards for the new economy. Spend
                     without limits, without surveillance, without compromise.
@@ -17,7 +19,7 @@ function FooterInfo() {
                     <span>All systems operational</span>
                 </p>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5" data-aos="zoom-in">
                 <SocialLink href="https://linkedin.com" icon={FaLinkedin} />
                 <SocialLink href="https://x.com" icon={FaSquareXTwitter} />
                 <SocialLink href="https://pinterest.com" icon={FaPinterest} />

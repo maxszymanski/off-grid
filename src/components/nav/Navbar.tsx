@@ -54,14 +54,14 @@ function Navbar() {
             <TopBar />
 
             <div
-                className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 lg:h-fit lg:py-[14px] xl:px-0 ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
+                className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 md:h-fit md:py-[14px] xl:px-0 ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
                 ref={navRef}
             >
                 <Nav isExpanded={isExpanded} toogleNav={toogleNav} />
             </div>
             {isExpanded &&
                 createPortal(
-                    <div className="bg-dark/40 fixed inset-0 z-[55] backdrop-blur-sm lg:hidden"></div>,
+                    <div className="bg-dark/40 fixed inset-0 z-[55] backdrop-blur-sm md:hidden"></div>,
                     document.body
                 )}
         </nav>

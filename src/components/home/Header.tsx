@@ -11,6 +11,7 @@ function Header() {
             style={{ backgroundImage: `url('${HeaderBg.src}')` }}
         >
             <Image
+                data-aos="fade-down"
                 alt="card"
                 width={809}
                 height={1071}
@@ -19,7 +20,10 @@ function Header() {
                 quality={100}
                 src={Card}
             />
-            <div className="mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
+            <div
+                className="mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]"
+                data-aos="zoom-in"
+            >
                 <h1 className="font-canela mb-7 text-nowrap text-[38px] leading-[100%] md:text-[64px] md:leading-[100%]">
                     Forget the system <br />{' '}
                     <span className="mt-2.5 inline-flex items-end gap-2">

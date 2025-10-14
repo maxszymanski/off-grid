@@ -4,12 +4,14 @@ interface InfoCardProps {
     imageSrc: string
     title: string
     description: string
+    idx: number
 }
 
-function InfoCard({ imageSrc, title, description }: InfoCardProps) {
+function InfoCard({ imageSrc, title, description, idx }: InfoCardProps) {
     return (
         <div
             className={`bg-dark3 group relative flex aspect-[612/500] max-h-[500px] min-h-[328px] w-full max-w-[612px] items-end overflow-hidden rounded-[14px] p-4 sm:rounded-2xl sm:p-6 md:px-4 xl:px-6`}
+            data-aos={`${idx % 2 === 0 ? 'fade-right' : 'fade-left'}`}
         >
             <div className="absolute inset-0 z-[5] bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             <Image

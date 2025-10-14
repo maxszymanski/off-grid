@@ -5,6 +5,7 @@ interface PrivacyCardProps {
     title: string
     description: string
     size?: 'large' | 'small'
+    idx: number
 }
 
 function PrivacyCard({
@@ -12,6 +13,7 @@ function PrivacyCard({
     title,
     description,
     size = 'small',
+    idx,
 }: PrivacyCardProps) {
     return (
         <div
@@ -20,6 +22,7 @@ function PrivacyCard({
                     ? 'aspect-[700/498] min-h-[349px] max-w-[700px]'
                     : 'aspect-[524/498] min-h-[328px] md:aspect-[700/498] md:min-h-[349px] xl:aspect-[524/498] xl:max-w-[524px]'
             }`}
+            data-aos={`${idx % 2 === 0 ? 'fade-right' : 'fade-left'}`}
         >
             <div className="absolute inset-0 z-[5] bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             <Image
