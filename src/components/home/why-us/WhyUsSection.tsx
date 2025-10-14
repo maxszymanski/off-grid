@@ -12,7 +12,7 @@ function WhyUsSection() {
                 alt=""
                 width={Lighting.width}
                 height={Lighting.height}
-                className="absolute -top-[100px] left-0 max-h-[600px] w-full max-w-[350px] sm:-top-[250px] sm:max-w-[600px] lg:-top-[280px] lg:max-h-[800px] lg:max-w-[800px] xl:-top-[450px] xl:max-h-[1200px] xl:max-w-[1200px] 2xl:-top-[550px] 2xl:max-w-[1300px]"
+                className="!pointer-events-none absolute -top-[100px] left-0 max-h-[600px] w-full max-w-[350px] sm:-top-[250px] sm:max-w-[600px] lg:-top-[280px] lg:max-h-[800px] lg:max-w-[800px] xl:-top-[450px] xl:max-h-[1200px] xl:max-w-[1200px] 2xl:-top-[550px] 2xl:max-w-[1300px]"
                 quality={100}
                 data-aos="fade-right"
             />
