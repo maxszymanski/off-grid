@@ -12,7 +12,7 @@ interface ColumnProps {
     restClass?: string
 }
 
-function FirstColumn({ cards, isCenter = false, restClass }: ColumnProps) {
+function ShadowColumn({ cards, isCenter = false, restClass }: ColumnProps) {
     const [emblaRef] = useEmblaCarousel(
         {
             loop: true,
@@ -48,4 +48,4 @@ function FirstColumn({ cards, isCenter = false, restClass }: ColumnProps) {
     )
 }
 
-export default FirstColumn
+export default ShadowColumn

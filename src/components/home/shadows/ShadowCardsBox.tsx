@@ -1,4 +1,4 @@
-import FirstColumn from './FirstColumn'
+import ShadowColumn from './ShadowColumn'
 
 const cards = [
     {
@@ -66,9 +66,9 @@ const cards = [
 function ShadowCardsBox() {
     return (
         <div className="shadow-box relative flex h-full flex-col items-start gap-4 overflow-y-visible lg:-mt-6 lg:flex-row lg:justify-between">
-            <FirstColumn cards={cards} />
-            <FirstColumn cards={cards} isCenter />
-            <FirstColumn cards={[...cards].reverse()} />
+            <ShadowColumn cards={cards} />
+            <ShadowColumn cards={cards} isCenter />
+            <ShadowColumn cards={[...cards].reverse()} />
         </div>
     )
 }

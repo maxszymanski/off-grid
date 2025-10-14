@@ -73,7 +73,7 @@ function EconomySection() {
     }, [emblaApi, updateScrollButtons])
 
     return (
-        <section className="pb-8 lg:pb-[120px]">
+        <section className="pb-8 xl:pb-[120px]">
             <div className="wrapper">
                 <div className="mb-[42px] flex flex-col items-center px-4 text-left sm:text-center md:mb-[84px] 2xl:px-0">
                     <h2 className="section-title mb-[22px]">

@@ -5,6 +5,7 @@ import InfoSection from '@/components/home/info/InfoSection'
 import MembershipSection from '@/components/home/membership/MembershipSection'
 import PrivacySection from '@/components/home/privacy/PrivacySection'
 import ShadowsSection from '@/components/home/shadows/ShadowsSection'
+import WhyUsSection from '@/components/home/why-us/WhyUsSection'
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <main>
                 <InfoSection />
                 <EconomySection />
+                <WhyUsSection />
                 <PrivacySection />
                 <ShadowsSection />
                 <MembershipSection />
