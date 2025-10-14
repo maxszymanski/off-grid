@@ -6,12 +6,13 @@ import ScrollButton from '../info/ScrollButton'
 import WhyUsTableFeatures from './WhyUsTableFeatures'
 import WhyUsOffGrid from './WhyUsOffGrid'
 import WhyUsBanks from './WhyUsBanks'
+import WhyUsOther from './WhyUsOther'
 
 function WhyUsTable() {
     const [isEnabled, setIsEnabled] = useState(false)
 
     useEffect(() => {
-        const checkWidth = () => setIsEnabled(window.innerWidth < 1280)
+        const checkWidth = () => setIsEnabled(window.innerWidth < 1024)
         checkWidth()
         window.addEventListener('resize', checkWidth)
         return () => window.removeEventListener('resize', checkWidth)
@@ -61,9 +62,10 @@ function WhyUsTable() {
                     <WhyUsTableFeatures />
                     <WhyUsOffGrid />
                     <WhyUsBanks />
+                    <WhyUsOther />
                 </div>
             </div>
-            <div className="mt-8 flex w-full items-center justify-end gap-2 px-4 xl:hidden">
+            <div className="mt-8 flex w-full items-center justify-end gap-2 px-4 lg:hidden">
                 <ScrollButton
                     onClick={scrollPrev}
                     disabled={!canScrollPrev}

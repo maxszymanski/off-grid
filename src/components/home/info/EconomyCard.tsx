@@ -15,7 +15,7 @@ function EconomyCard({ imageSrc, title, description }: EconomyCardProps) {
             <Image
                 src={imageSrc}
                 fill
-                className="object-top-left"
+                className="lg:object-top-left object-cover"
                 alt=""
                 quality={100}
             />
