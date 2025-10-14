@@ -7,7 +7,7 @@ function SwitchButton({
 }) {
     return (
         <button
-            className="switch group relative h-7 w-[64px] cursor-pointer rounded-full p-0.5"
+            className="switch bg-dark4 group relative h-7 w-[64px] cursor-pointer rounded-full p-0.5"
             onClick={onClick}
             aria-label="switch"
         >
