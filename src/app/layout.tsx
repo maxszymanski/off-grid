@@ -32,10 +32,12 @@ export default function RootLayout({
             <body
                 className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary w-full overflow-x-hidden antialiased`}
             >
-                <Navbar />
-                <AosProvider>{children}</AosProvider>
+                <AosProvider>
+                    <Navbar />
+                    {children}
 
-                <Footer />
+                    <Footer />
+                </AosProvider>
             </body>
         </html>
     )
