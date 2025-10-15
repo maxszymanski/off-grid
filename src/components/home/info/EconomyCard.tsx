@@ -51,7 +51,7 @@ function EconomyCard({
                 <h3 className="mb-3 font-medium md:mb-4 md:text-2xl">
                     {title}
                 </h3>
-                <p className="text-primary/70">{description}</p>
+                <p className="text-primary/70 md:pr-2">{description}</p>
             </div>
         </div>
     )

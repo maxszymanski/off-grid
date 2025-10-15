@@ -25,7 +25,7 @@ function InfoCard({ imageSrc, title, description, idx }: InfoCardProps) {
                 <h3 className="mb-3 font-medium sm:mb-4 sm:text-2xl md:text-base lg:text-2xl">
                     {title}
                 </h3>
-                <p className="text-primary/70 max-w-[326px] pr-2 sm:max-w-[548px]">
+                <p className="text-primary/70 max-w-[326px] pr-2 sm:max-w-[548px] xl:pr-11">
                     {description}
                 </p>
             </div>

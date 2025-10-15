@@ -12,30 +12,33 @@ import StandardCard from '@/assets/cards-bg/standard-cart.webp'
 import PlatinumCard from '@/assets/cards-bg/platinum-card.webp'
 import EliteCard from '@/assets/cards-bg/elite-card.webp'
 import SwitchButton from '@/components/ui/SwitchButton'
+import { useT } from '@/app/i18n/client'
 
 const cards = [
     {
         imageSrc: StandardCard.src,
         monthPrice: '0',
         yearPrice: '0',
-        title: 'Standard Card',
+        title: 'Shadow',
         list: [
-            'Spend up to $4,000/mo with no KYC',
-            '1% cashback in Bitcoin on all purchases',
-            'Extra 0.5% rewards on transactions over $1,000',
+            'Spend up to $4,000/month with no KYC.',
+            '1% cashback on every purchase.',
+            '+0.5% extra rewards on transactions over $1,000.',
         ],
         linkHref: '/',
+        linkName: 'Get Free, Instantly',
     },
     {
         imageSrc: PlatinumCard.src,
         monthPrice: '99',
         yearPrice: '1099',
-        title: 'Premium Card',
+        title: 'Phantom',
         list: [
-            '2% crypto cashback — BTC, ETH, or SOL',
-            'Earn yield automatically on cashback balance',
-            '5% back at select premium retailers',
-            'Additional rewards for holding crypto balances',
+            '2% cashback on every purchase.',
+            'Earn yield automatically on your cashback balance.',
+            '5% back at select premium retailers.',
+            'Extra rewards for holding crypto balances.',
+            'For serious movers who want every dollar to work harder, silently.',
         ],
         linkHref: '/',
     },
@@ -43,14 +46,14 @@ const cards = [
         imageSrc: EliteCard.src,
         monthPrice: '299',
         yearPrice: '3499',
-        title: 'Standard Card',
+        title: 'Ghost',
         list: [
-            '3% cashback in any supported cryptocurrency',
-            'Exclusive merchant partnerships and discounts',
+            '3% cashback on every purchase.',
+            'Exclusive merchant partnerships + insider discounts.',
             'Auto-compound rewards in DeFi protocols',
-            'Access to crypto events and meetups',
-            'Concirge services',
-            'Custom card design',
+            'Access to private crypto events + curated meetups.',
+            'Concierge service + custom card design.',
+            'The ultimate Offgrid status — built for founders, whales, and those who never play by their rules.',
         ],
         linkHref: '/',
     },
@@ -59,6 +62,7 @@ const cards = [
 function MembershipSection() {
     const [isEnabled, setIsEnabled] = useState(false)
     const [per, setPer] = useState<'mth' | 'year'>('mth')
+    const { t } = useT('transition')
 
     useEffect(() => {
         const checkWidth = () => setIsEnabled(window.innerWidth < 1024)
@@ -136,12 +140,11 @@ function MembershipSection() {
                     data-aos="fade-up"
                 >
                     <h2 className="section-title mb-[22px]">
-                        Choose Your Membership. <br /> Unlock Your Card.
+                        {t('membership.title.top')} <br />{' '}
+                        {t('membership.title.bottom')}
                     </h2>
                     <p className="section-subtitle max-w-[448px]">
-                        From everyday spending to elite crypto privileges —
-                        Shadow, Phantom, or Ghost. One card, three levels of
-                        rewards.
+                        {t('membership.subTitle')}
                     </p>
                 </div>
                 <div
@@ -151,7 +154,7 @@ function MembershipSection() {
                     <p
                         className={`${per === 'mth' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
                     >
-                        Monthly
+                        {t('membership.monthly')}
                     </p>
                     <SwitchButton
                         isMonth={per === 'mth'}
@@ -161,7 +164,7 @@ function MembershipSection() {
                     <p
                         className={`${per === 'year' ? 'text-primary' : 'text-primary/70'} transition-colors duration-300`}
                     >
-                        Yearly
+                        {t('membership.yearly')}
                     </p>
                 </div>
                 <div className="relative pt-2" data-aos="zoom-in">
@@ -189,6 +192,7 @@ function MembershipSection() {
                                     monthPrice={card.monthPrice}
                                     yearPrice={card.yearPrice}
                                     title={card.title}
+                                    linkName={card.linkName}
                                 />
                             ))}
                         </div>
@@ -214,9 +218,9 @@ function MembershipSection() {
                     data-aos="zoom-in"
                 >
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
-                        Earn commissions, bonuses, and perks{' '}
+                        {t('membership.bottom-text.gray')}{' '}
                         <span className="text-primary font-medium">
-                            for every referral.
+                            {t('membership.bottom-text.white')}
                         </span>
                     </p>
                     <div className="flex justify-center">

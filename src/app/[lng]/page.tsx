@@ -4,29 +4,28 @@ import EconomySection from '@/components/home/info/EconomySection'
 import InfoSection from '@/components/home/info/InfoSection'
 import MembershipSection from '@/components/home/membership/MembershipSection'
 import PrivacySection from '@/components/home/privacy/PrivacySection'
-import ShadowsSection from '@/components/home/shadows/ShadowsSection'
+// import ShadowsSection from '@/components/home/shadows/ShadowsSection'
 import WhyUsSection from '@/components/home/why-us/WhyUsSection'
-import Link from 'next/link'
-import { getT } from '../i18n'
 
-export default async function Home({ params }: { params: { lng: string } }) {
-    const { lng } = await params
-    const { t } = await getT('transition')
+const languages = ['en', 'de']
+
+export async function generateStaticParams() {
+    return languages.map((lng) => ({ lng }))
+}
+
+export default async function Home() {
     return (
         <>
             <Header />
-            {/* <main>
+            <main>
                 <InfoSection />
                 <EconomySection />
                 <WhyUsSection />
                 <PrivacySection />
-                <ShadowsSection />
+                {/* <ShadowsSection /> */}
                 <MembershipSection />
                 <FaqSection />
-            </main> */}
-
-            {/* <h1> {t('title')}</h1>
-            <Link href={`/${lng}/second-page`}>{t('to-second-page')} </Link> */}
+            </main>
         </>
     )
 }

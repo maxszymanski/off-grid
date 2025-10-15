@@ -1,17 +1,19 @@
 import Image from 'next/image'
-import StyledLinkBox from '../ui/StyledLinkBox'
 import FooterLists from './FooterLists'
 import HeroSm from '@/assets/footer-hero-sm.png'
 import HeroLarge from '@/assets/footer-hero.png'
 import FooterInfo from './FooterInfo'
 import { getT } from '@/app/i18n'
+import StyledLink from '../ui/StyledLink'
 
 async function Footer({ lng }: { lng: string }) {
     const { t } = await getT('transition')
     return (
         <footer className="relative overflow-hidden">
             <div className="mb-8 px-4 text-center" data-aos="fade-up">
-                <h2 className="section-title pb-[22px]">{t('footer.title')}</h2>
+                <h2 className="section-title pb-[22px]">
+                    {t('footer.title.top')} <br /> {t('footer.title.bottom')}
+                </h2>
                 <p className="section-subtitle">
                     {t('footer.subTitle.top')} <br />{' '}
                     <span className="lg:text-primary/90 lg:font-medium">
@@ -21,7 +23,17 @@ async function Footer({ lng }: { lng: string }) {
                 </p>
             </div>
             <div className="px-4" data-aos="zoom-in">
-                <StyledLinkBox />
+                <div className="relative z-20 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                    <StyledLink
+                        name={t('footer.ctaLinkName')}
+                        borderPosition="top"
+                    />
+                    <StyledLink
+                        name={t('header.links.how-works')}
+                        variant="dark"
+                        borderPosition="bottom"
+                    />
+                </div>
             </div>
             <div className="wrapper relative -mt-2 flex flex-col justify-end px-4 pt-[260px] sm:-mt-3 sm:aspect-[1170/780] md:max-h-[780px] xl:px-0">
                 <Image
@@ -48,7 +60,7 @@ async function Footer({ lng }: { lng: string }) {
                 </div>
             </div>
             <p className="text-primary/70 px-4 pb-2 pt-5 text-center text-xs leading-[130%] md:pb-5 md:pt-[7px]">
-                {t('footer.subTitle.terms')}
+                {t('footer.terms')}
             </p>
         </footer>
     )

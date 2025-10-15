@@ -12,6 +12,7 @@ interface CardProps {
     list: string[]
     index: number
     linkHref: string
+    linkName?: string
 }
 
 function MembershipCard({
@@ -23,6 +24,7 @@ function MembershipCard({
     title,
     list,
     linkHref,
+    linkName = 'Apply',
 }: CardProps) {
     return (
         <div data-aos="zoom-out">
@@ -55,14 +57,14 @@ function MembershipCard({
 
                     <StyledLink
                         href={linkHref}
-                        name="Apply"
+                        name={linkName}
                         restClass="sm:!w-full lg:hidden"
                         variant={index % 2 === 0 ? 'light' : 'dark'}
                         isEllipse={false}
                     />
                     <StyledLink
                         href={linkHref}
-                        name="Apply"
+                        name={linkName}
                         restClass="sm:!w-full hidden lg:block"
                         variant={index % 2 === 0 ? 'dark' : 'light'}
                         isEllipse={false}

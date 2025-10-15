@@ -18,7 +18,7 @@ function Nav({ toogleNav, isExpanded, children }: NavProps) {
                 <Hamburger onClick={toogleNav} isExpanded={isExpanded} />
             </div>
             <div
-                className={`text-primary bg-whiteBg sticky z-40 flex h-full w-full flex-col gap-8 py-6 transition-all duration-300 md:flex-row md:items-center md:justify-center md:py-0 ${isExpanded ? '-translate-x-0 opacity-100' : '-translate-x-[120%] opacity-0 md:-translate-x-0 md:opacity-100'}`}
+                className={`text-primary bg-whiteBg sticky z-40 flex h-full w-full flex-col gap-8 py-6 transition-all duration-300 md:w-fit md:flex-row md:items-center md:justify-center md:py-0 ${isExpanded ? '-translate-x-0 opacity-100' : '-translate-x-[120%] opacity-0 md:-translate-x-0 md:opacity-100'}`}
             >
                 {children}
                 <div className="md:hidden">

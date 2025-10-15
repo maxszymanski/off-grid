@@ -7,10 +7,12 @@ import Binance from '@/assets/logos/binance.svg'
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import AutoScroll from 'embla-carousel-auto-scroll'
+import { useT } from '@/app/i18n/client'
 
 const logos = [Axiom, Solana, Jupiter, DexScreener, Binance]
 
 function HeaderLogos() {
+    const { t } = useT('transition')
     const [emblaRef] = useEmblaCarousel(
         {
             loop: true,
@@ -29,7 +31,7 @@ function HeaderLogos() {
                 className="text-primary/70 font-medium leading-[130%] lg:shrink-0 lg:text-left lg:text-2xl lg:leading-[130%] xl:w-[357px]"
                 data-aos="fade-right"
             >
-                Trusted by innovators at
+                {t('header.logos')}
             </p>
             <div
                 className="header-logos pointer-events-none relative w-full overflow-hidden"

@@ -41,7 +41,7 @@ async function FooterLists({ lng }: { lng: string }) {
             {lists.map((list, idx) => (
                 <div
                     className="sm:min-w-1/5 flex flex-col gap-4 lg:gap-5 xl:min-w-[183px]"
-                    key={list.title}
+                    key={idx}
                 >
                     <h2
                         className="text-sm font-medium leading-[130%]"
@@ -50,7 +50,7 @@ async function FooterLists({ lng }: { lng: string }) {
                         {t(`footer.links.${idx}.${list.title}`)}
                     </h2>
                     <ul className="flex flex-col gap-3" data-aos="fade-up">
-                        {list.list.map((l, i) => (
+                        {list.list.map((l) => (
                             <li
                                 key={l.name}
                                 className="flex h-[18px] items-center"

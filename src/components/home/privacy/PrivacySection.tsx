@@ -4,6 +4,7 @@ import Lock from '@/assets/cards-bg/lock.webp'
 import Virtual from '@/assets/cards-bg/virtual.webp'
 import StyledLink from '@/components/ui/StyledLink'
 import PrivacyCard from './PrivacyCard'
+import { getT } from '@/app/i18n'
 
 const cards = [
     {
@@ -36,23 +37,23 @@ const cards = [
     },
 ]
 
-function PrivacySection() {
+async function PrivacySection() {
+    const { t } = await getT('transition')
     return (
-        <section className="w-full overflow-hidden pb-20 lg:pb-[120px]">
+        <section className="w-full overflow-hidden" id="security">
             <div className="wrapper px-4 xl:px-0">
                 <div
                     className="mb-[42px] flex flex-col items-center text-center md:mb-[60px]"
                     data-aos="fade-up"
                 >
-                    <h2 className="section-title mb-[22px]">
-                        Privacy by design
+                    <h2 className="section-title lg:!leading-14 mb-[22px] !leading-9">
+                        {t('privacy.title.top')} <br />{' '}
+                        {t('privacy.title.bottom')}
                     </h2>
                     <p className="section-subtitle max-w-[438px]">
-                        Off Grid was built for those who move outside the
-                        system.{' '}
+                        {t('privacy.subTitle.gray')}{' '}
                         <span className="text-primary">
-                            {' '}
-                            No KYC. No unnecessary data collection.
+                            {t('privacy.subTitle.white')}
                         </span>
                     </p>
                 </div>
@@ -62,8 +63,8 @@ function PrivacySection() {
                             key={idx}
                             idx={idx}
                             imageSrc={card.image}
-                            title={card.title}
-                            description={card.description}
+                            title={t(`privacy.cards.${idx}.title`)}
+                            description={t(`privacy.cards.${idx}.subTitle`)}
                             size={card.size as 'large' | 'small'}
                         />
                     ))}
@@ -71,9 +72,9 @@ function PrivacySection() {
                 <div className="w-full" data-aos="zoom-in">
                     <p className="section-subtitle mb-6 mt-[42px] text-center md:mb-8 md:mt-[60px]">
                         <span className="text-primary font-medium">
-                            Privacy isn’t a feature here
+                            {t('privacy.bottom-text.white')}{' '}
                         </span>
-                        — it’s the foundation.
+                        {t('privacy.bottom-text.gray')}
                     </p>
                     <div className="flex justify-center">
                         <StyledLink name="Learn About Our Security" href="/" />

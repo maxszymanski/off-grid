@@ -27,6 +27,7 @@ async function Header() {
                 quality={100}
                 src={Card}
             />
+
             <div className="relative z-[1] mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
                 <h1 className="font-canela xs:text-[38px] mb-7 text-nowrap text-3xl leading-[100%] md:text-[64px] md:leading-[100%]">
                     {t('header.title.top')} <br />{' '}

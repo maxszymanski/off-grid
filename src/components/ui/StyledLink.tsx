@@ -7,6 +7,7 @@ interface StyledLinkProps {
     restClass?: string
     href?: string
     isEllipse?: boolean
+    target?: string
 }
 
 function StyledLink({
@@ -16,9 +17,12 @@ function StyledLink({
     borderPosition = 'bottom',
     restClass,
     isEllipse = true,
+    target = '_self',
 }: StyledLinkProps) {
     return (
         <Link
+            rel="noopener noreferrer"
+            target={target}
             href={href}
             className={`${restClass ? restClass : ''} my-shadow group relative flex w-full shrink-0 cursor-pointer items-center justify-center overflow-hidden text-nowrap rounded-[18px] p-1.5 mix-blend-plus-lighter transition-colors duration-300 sm:w-fit ${borderPosition === 'top' ? 'border-linear-top' : 'border-linear-bottom'}`}
         >

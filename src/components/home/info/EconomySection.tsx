@@ -7,30 +7,23 @@ import EconomyCard from './EconomyCard'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import ScrollButton from './ScrollButton'
+import { useT } from '@/app/i18n/client'
 
 const cards = [
     {
         smallImage: CryptoSm.src,
         image: Crypto.src,
-        title: 'Crypto Traders',
-        description:
-            'Convert positions to real-world spending power instantly. No waiting for exchanges.',
     },
     {
         image: Digital.src,
-        title: 'Digital Nomads',
-        description:
-            'Pay in any currency, anywhere. No foreign transaction fees or banking restrictions.',
     },
     {
         image: Founders.src,
-        title: 'Builders & Founders',
-        description:
-            'Move capital without permission or friction. If you hold any crypto, this app is for you.',
     },
 ]
 
 function EconomySection() {
+    const { t } = useT('transition')
     const [isEnabled, setIsEnabled] = useState(false)
 
     useEffect(() => {
@@ -82,12 +75,11 @@ function EconomySection() {
                     data-aos="fade-up"
                 >
                     <h2 className="section-title mb-[22px]">
-                        Built for the new economy.
+                        {t('economy.title.top')} <br />{' '}
+                        {t('economy.title.bottom')}
                     </h2>
-                    <p className="section-subtitle max-w-[360px] sm:max-w-[462px]">
-                        Whether you&apos;re flipping memes, trading NFTs,
-                        farming yields, or living borderless — Off Grid keeps
-                        you liquid, instantly.
+                    <p className="section-subtitle max-w-[360px] sm:max-w-[510px]">
+                        {t('economy.subTitle')}
                     </p>
                 </div>
                 <div
@@ -99,8 +91,8 @@ function EconomySection() {
                             <EconomyCard
                                 key={idx}
                                 imageSrc={card.image}
-                                title={card.title}
-                                description={card.description}
+                                title={t(`economy.cards.${idx}.title`)}
+                                description={t(`economy.cards.${idx}.subTitle`)}
                                 smallImage={card.smallImage}
                             />
                         ))}

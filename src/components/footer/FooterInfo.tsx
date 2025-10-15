@@ -1,4 +1,4 @@
-import { FaPinterest, FaLinkedin } from 'react-icons/fa'
+// import { FaPinterest, FaLinkedin } from 'react-icons/fa'
 import Logo from '../icons/Logo'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import SocialLink from './SocialLink'
@@ -21,21 +21,21 @@ async function FooterInfo() {
                 </p>
             </div>
             <div className="flex items-center gap-1.5" data-aos="zoom-in">
-                <SocialLink
+                {/* <SocialLink
                     href="https://linkedin.com"
                     icon={FaLinkedin}
                     label={t('footer.info.label')}
-                />
+                /> */}
                 <SocialLink
-                    href="https://x.com"
+                    href="https://x.com/offgridcash"
                     icon={FaSquareXTwitter}
                     label={t('footer.info.label')}
                 />
-                <SocialLink
+                {/* <SocialLink
                     href="https://pinterest.com"
                     icon={FaPinterest}
                     label={t('footer.info.label')}
-                />
+                /> */}
             </div>
         </div>
     )
