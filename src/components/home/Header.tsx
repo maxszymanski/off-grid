@@ -6,10 +6,15 @@ import MiniCard from '../ui/MiniCard'
 import HeaderLogos from './HeaderLogos'
 function Header() {
     return (
-        <header
-            className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden bg-cover bg-center lg:min-h-[1022px] 2xl:bg-bottom"
-            style={{ backgroundImage: `url('${HeaderBg.src}')` }}
-        >
+        <header className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden lg:min-h-[1022px]">
+            <Image
+                src={HeaderBg}
+                fill
+                alt=""
+                className="object-cover object-center 2xl:object-bottom"
+                quality={100}
+                priority
+            />
             <Image
                 alt="card"
                 width={809}
@@ -19,7 +24,7 @@ function Header() {
                 quality={100}
                 src={Card}
             />
-            <div className="mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
+            <div className="relative z-[1] mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
                 <h1 className="font-canela mb-7 text-nowrap text-[38px] leading-[100%] md:text-[64px] md:leading-[100%]">
                     Forget the system <br />{' '}
                     <span className="mt-2.5 inline-flex items-end gap-2">
