@@ -78,13 +78,13 @@ function EconomySection() {
         <section className="relative z-[0] w-full overflow-x-hidden pb-8 xl:pb-[120px]">
             <div className="wrapper">
                 <div
-                    className="mb-[42px] flex flex-col items-center px-4 text-left sm:text-center md:mb-[84px] 2xl:px-0"
+                    className="mb-[42px] flex flex-col px-4 text-left sm:items-center sm:text-center md:mb-[84px] 2xl:px-0"
                     data-aos="fade-up"
                 >
                     <h2 className="section-title mb-[22px]">
                         Built for the new economy.
                     </h2>
-                    <p className="section-subtitle max-w-[462px]">
+                    <p className="section-subtitle max-w-[360px] sm:max-w-[462px]">
                         Whether you&apos;re flipping memes, trading NFTs,
                         farming yields, or living borderless — Off Grid keeps
                         you liquid, instantly.
