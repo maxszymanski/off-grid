@@ -15,6 +15,8 @@ function ScrollButton({
             onClick={onClick}
             disabled={disabled}
             className="my-card-shadow bg-dark4 flex size-11 items-center justify-center rounded-lg transition-opacity duration-300 disabled:opacity-70"
+            aria-label={`scroll ${variant} `}
+            title={`scroll ${variant} `}
         >
             {variant === 'left' ? (
                 <FaArrowLeft className="pointer-events-none size-3" />

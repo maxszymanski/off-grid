@@ -13,6 +13,7 @@ export default function SocialLink({ href, icon: Icon }: SocialLinkProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary/70 transition-colors duration-300"
+            aria-label="social link"
         >
             <Icon className="pointer-events-none size-[28px] shrink-0" />
         </Link>
