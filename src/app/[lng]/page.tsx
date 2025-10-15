@@ -6,12 +6,16 @@ import MembershipSection from '@/components/home/membership/MembershipSection'
 import PrivacySection from '@/components/home/privacy/PrivacySection'
 import ShadowsSection from '@/components/home/shadows/ShadowsSection'
 import WhyUsSection from '@/components/home/why-us/WhyUsSection'
+import Link from 'next/link'
+import { getT } from '../i18n'
 
-export default function Home() {
+export default async function Home({ params }: { params: { lng: string } }) {
+    const { lng } = await params
+    const { t } = await getT('transition')
     return (
         <>
             <Header />
-            <main>
+            {/* <main>
                 <InfoSection />
                 <EconomySection />
                 <WhyUsSection />
@@ -19,7 +23,10 @@ export default function Home() {
                 <ShadowsSection />
                 <MembershipSection />
                 <FaqSection />
-            </main>
+            </main> */}
+
+            {/* <h1> {t('title')}</h1>
+            <Link href={`/${lng}/second-page`}>{t('to-second-page')} </Link> */}
         </>
     )
 }

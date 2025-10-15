@@ -4,19 +4,19 @@ import FooterLists from './FooterLists'
 import HeroSm from '@/assets/footer-hero-sm.png'
 import HeroLarge from '@/assets/footer-hero.png'
 import FooterInfo from './FooterInfo'
+import { getT } from '@/app/i18n'
 
-function Footer() {
+async function Footer({ lng }: { lng: string }) {
+    const { t } = await getT('transition')
     return (
         <footer className="relative overflow-hidden">
             <div className="mb-8 px-4 text-center" data-aos="fade-up">
-                <h2 className="section-title pb-[22px]">
-                    Your Crypto, Your Control.
-                </h2>
+                <h2 className="section-title pb-[22px]">{t('footer.title')}</h2>
                 <p className="section-subtitle">
-                    Not your keys, not your crypto — but <br />{' '}
+                    {t('footer.subTitle.top')} <br />{' '}
                     <span className="lg:text-primary/90 lg:font-medium">
                         {' '}
-                        now it’s spendable everywhere.
+                        {t('footer.subTitle.bottom')}
                     </span>
                 </p>
             </div>
@@ -44,11 +44,11 @@ function Footer() {
                 />
                 <div className="relative z-20 flex flex-col gap-12 border-b border-white/15 pb-12 md:mb-[13px] md:flex-row md:items-center md:gap-3 md:pb-10 xl:gap-[100px]">
                     <FooterInfo />
-                    <FooterLists />
+                    <FooterLists lng={lng} />
                 </div>
             </div>
             <p className="text-primary/70 px-4 pb-2 pt-5 text-center text-xs leading-[130%] md:pb-5 md:pt-[7px]">
-                © 2024 Off Grid LLC. All rights reserved.
+                {t('footer.subTitle.terms')}
             </p>
         </footer>
     )

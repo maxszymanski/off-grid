@@ -5,8 +5,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import TopBar from './TopBar'
 import Nav from './Nav'
 import { createPortal } from 'react-dom'
+import NavList from './NavList'
 
-function Navbar() {
+function Navbar({ lng }: { lng: string }) {
     const [show, setShow] = useState(true)
     const navRef = useRef(null)
     const [lastScrollY, setLastScrollY] = useState(0)
@@ -57,7 +58,9 @@ function Navbar() {
                 className={`mx-auto h-[82px] w-full max-w-[1240px] px-4 pt-4 md:h-fit md:py-[14px] xl:px-0 ${hasBorder ? 'bg-transparent' : 'bg-transparent'}`}
                 ref={navRef}
             >
-                <Nav isExpanded={isExpanded} toogleNav={toogleNav} />
+                <Nav isExpanded={isExpanded} toogleNav={toogleNav}>
+                    <NavList lng={lng} />
+                </Nav>
             </div>
             {isExpanded &&
                 createPortal(

@@ -1,0 +1,74 @@
+{
+    "nav": {
+        "top": {
+            "mobile": {
+                "white": "Non-Private Beta Soon",
+                "gray": " KYC Spending — Up to $4k/mo instantly"
+            },
+            "desktop": "NO-KYC Spending up to 4k/month"
+        },
+        "links": {
+            "home": "Home",
+            "how-works": "How it works",
+            "security": "Security & Privacy",
+            "ecosystem": "Ecosystem"
+        }
+    },
+    "header": {
+        "title": {
+            "top": "Forget the system",
+            "bottom-left": "Own your",
+            "bottom-right": "freedom"
+        },
+        "subTitle": "Privacy-first crypto cards and instant payments. No KYC, no delays, no compromise.",
+        "links": {
+            "join": "Join the Waitlist",
+            "how-works": "See How it Works"
+        }
+    },
+    "footer": {
+        "title": "Your Crypto, Your Control.",
+        "subTitle": {
+            "top": "Not your keys, not your crypto — but",
+            "bottom": "now it’s spendable everywhere."
+        },
+        "terms": "© 2024 Off Grid LLC. All rights reserved.",
+        "info": {
+            "info-text": " Privacy-first crypto cards for the new economy. Spend without limits, without surveillance, without compromise.",
+            "all-systems": "All systems operational",
+            "label": "social link"
+        },
+        "links": [
+            {
+                "0": {
+                    "title": "Product",
+                    "crypto-card": "Crypto Cards",
+                    "mobile-app": "Mobile App",
+                    "web-dashboard": "Web Dashboard",
+                    "api": "Api Access",
+                    "multi-chain": "Multi-Chain Support"
+                }
+            },
+            {
+                "1": {
+                    "title": "Company",
+                    "about-us": "About Us",
+                    "careers": "Careers",
+                    "press-kit": "Press Kit",
+                    "blog": "Blog",
+                    "contact": "Contact"
+                }
+            },
+            {
+                "2": {
+                    "title": "Support",
+                    "help-center": "Help Center",
+                    "privacy-policy": "Privacy Policy",
+                    "terms-of-service": "Terms of Service",
+                    "security": "Security",
+                    "status-page": "Status Page"
+                }
+            }
+        ]
+    }
+}

@@ -1,11 +1,13 @@
+import { getT } from '@/app/i18n'
 import StyledLink from './StyledLink'
 
-function StyledLinkBox() {
+async function StyledLinkBox() {
+    const { t } = await getT('transition')
     return (
         <div className="relative z-20 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <StyledLink name="Join the Waitlist" borderPosition="top" />
+            <StyledLink name={t('header.links.join')} borderPosition="top" />
             <StyledLink
-                name="See How it Works"
+                name={t('header.links.how-works')}
                 variant="dark"
                 borderPosition="bottom"
             />

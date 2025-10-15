@@ -4,7 +4,9 @@ import Image from 'next/image'
 import StyledLinkBox from '../ui/StyledLinkBox'
 import MiniCard from '../ui/MiniCard'
 import HeaderLogos from './HeaderLogos'
-function Header() {
+import { getT } from '@/app/i18n'
+async function Header() {
+    const { t } = await getT('transition')
     return (
         <header className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden lg:min-h-[1022px]">
             <Image
@@ -26,15 +28,15 @@ function Header() {
                 src={Card}
             />
             <div className="relative z-[1] mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[390px] text-center sm:px-0 md:pt-[500px]">
-                <h1 className="font-canela mb-7 text-nowrap text-[38px] leading-[100%] md:text-[64px] md:leading-[100%]">
-                    Forget the system <br />{' '}
+                <h1 className="font-canela xs:text-[38px] mb-7 text-nowrap text-3xl leading-[100%] md:text-[64px] md:leading-[100%]">
+                    {t('header.title.top')} <br />{' '}
                     <span className="mt-2.5 inline-flex items-end gap-2">
-                        keep your <MiniCard /> freedom
+                        {t('header.title.bottom-left')} <MiniCard />{' '}
+                        {t('header.title.bottom-right')}
                     </span>
                 </h1>
                 <p className="text-primary/70 mx-auto mb-8 max-w-[367px] leading-[130%] md:mb-12">
-                    Privacy-first crypto cards and instant payments. No KYC, no
-                    delays, no compromise.
+                    {t('header.subTitle')}
                 </p>
                 <StyledLinkBox />
             </div>

@@ -1,42 +1,44 @@
+import { getT } from '@/app/i18n'
 import Link from 'next/link'
 
 const lists = [
     {
-        title: 'Product',
+        title: 'title',
         list: [
-            { name: 'Crypto Cards', href: '/crypto-cards' },
-            { name: 'Mobile App', href: '/mobile-app' },
-            { name: 'Web Dashboard', href: '/web-dashboard' },
-            { name: 'API Access', href: '/api-access' },
-            { name: 'Multi-Chain Support', href: '/multi-chain-support' },
+            { name: 'crypto-card', href: '' },
+            { name: 'mobile-app', href: '' },
+            { name: 'web-dashboard', href: '' },
+            { name: 'api', href: '' },
+            { name: 'multi-chain', href: '' },
         ],
     },
     {
-        title: 'Company',
+        title: 'title',
         list: [
-            { name: 'About Us', href: '/about-us' },
-            { name: 'Careers', href: '/careers' },
-            { name: 'Press Kit', href: '/press-kit' },
-            { name: 'Blog', href: '/blog' },
-            { name: 'Contact', href: '/contact' },
+            { name: 'about-us', href: '' },
+            { name: 'careers', href: '' },
+            { name: 'press-kit', href: '' },
+            { name: 'blog', href: '' },
+            { name: 'contact', href: '' },
         ],
     },
     {
-        title: 'Support',
+        title: 'title',
         list: [
-            { name: 'Help Center', href: '/help-center' },
-            { name: 'Privacy Policy', href: '/privacy-policy' },
-            { name: 'Terms of Service', href: '/terms-of-service' },
-            { name: 'Security', href: '/security' },
-            { name: 'Status Page', href: '/status' },
+            { name: 'help-center', href: '' },
+            { name: 'privacy-policy', href: '' },
+            { name: 'terms-of-service', href: '' },
+            { name: 'security', href: '' },
+            { name: 'status-page', href: '' },
         ],
     },
 ]
 
-function FooterLists() {
+async function FooterLists({ lng }: { lng: string }) {
+    const { t } = await getT('transition')
     return (
         <div className="flex w-full flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:justify-evenly lg:justify-end lg:gap-20 xl:gap-[100px]">
-            {lists.map((list) => (
+            {lists.map((list, idx) => (
                 <div
                     className="sm:min-w-1/5 flex flex-col gap-4 lg:gap-5 xl:min-w-[183px]"
                     key={list.title}
@@ -45,16 +47,19 @@ function FooterLists() {
                         className="text-sm font-medium leading-[130%]"
                         data-aos="fade-up"
                     >
-                        {list.title}
+                        {t(`footer.links.${idx}.${list.title}`)}
                     </h2>
                     <ul className="flex flex-col gap-3" data-aos="fade-up">
                         {list.list.map((l, i) => (
-                            <li key={i} className="flex h-[18px] items-center">
+                            <li
+                                key={l.name}
+                                className="flex h-[18px] items-center"
+                            >
                                 <Link
-                                    href={l.href}
+                                    href={`/${lng}/${l.href}`}
                                     className="text-primary/70 hover:text-primary text-sm leading-[130%] transition-colors duration-300"
                                 >
-                                    {l.name}
+                                    {t(`footer.links.${idx}.${l.name}`)}
                                 </Link>
                             </li>
                         ))}

@@ -1,13 +1,12 @@
 import NavLink from './NavLink'
 
-const list = [
-    { name: 'Home', href: '/', isActive: true },
-    { name: 'How it works', href: '/' },
-    { name: 'Security & Privacy', href: '/' },
-    { name: 'Ecosystem', href: '/' },
-]
-
-function NavList() {
+function NavList({ lng }: { lng: string }) {
+    const list = [
+        { name: 'home', href: `/${lng}/`, isActive: true },
+        { name: 'how-works', href: `/${lng}/` },
+        { name: 'security', href: `/${lng}/` },
+        { name: 'ecosystem', href: `/${lng}/` },
+    ]
     return (
         <ul
             className={`flex flex-col gap-5 md:flex-row md:items-center lg:gap-6`}
