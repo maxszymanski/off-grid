@@ -6,7 +6,7 @@ import Navbar from '@/components/nav/Navbar'
 import AosProvider from '@/components/ui/AosProvider'
 import { dir } from 'i18next'
 import ModalsControler from '@/components/ui/ModalsControler'
-import ScrollToHash from '@/components/ui/ScrollToHash'
+import Toaster from '@/components/ui/Toaster'
 
 const languages = ['en', 'de']
 
@@ -86,7 +86,7 @@ export default async function RootLayout({
                     {children}
                 </AosProvider>
                 <ModalsControler />
-                <ScrollToHash />
+                <Toaster />
             </body>
         </html>
     )

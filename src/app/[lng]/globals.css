@@ -24,6 +24,26 @@
     }
 }
 
+.Toastify__toast--success {
+    @apply bg-dark4;
+}
+.Toastify__toast--success {
+    @apply bg-dark4;
+}
+
+.Toastify__progress-bar {
+    @apply !bg-primary/70;
+}
+
+.Toastify__close-button,
+.Toastify__toast--success {
+    @apply text-primary/80;
+}
+.Toastify__toast-icon > svg {
+    @apply !text-primary;
+    fill: rgb(245, 245, 245, 0.8);
+}
+
 .body--modal-open {
     overflow: hidden;
 }

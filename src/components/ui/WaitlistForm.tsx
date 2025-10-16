@@ -10,6 +10,7 @@ import Input from './Input'
 import Spinner from './Spinner'
 import { HiOutlineUser } from 'react-icons/hi2'
 import { FiMail } from 'react-icons/fi'
+import { toast } from 'react-toastify'
 
 const contactSchema = z.object({
     name: z
@@ -27,7 +28,6 @@ function WaitlistForm() {
     const {
         register,
         handleSubmit,
-
         formState: { errors, isSubmitting },
         reset,
     } = useForm<ContactType>({ resolver: zodResolver(contactSchema) })
@@ -38,8 +38,9 @@ function WaitlistForm() {
 
     const onSubmit: SubmitHandler<ContactType> = async (data) => {
         console.log(data)
-        alert('The form requires a connection to the server.')
+        toast.success(`Thank you for join to waitlist 🎉`)
         reset()
+        closeModal()
     }
 
     const handleCloseModal = () => {
