@@ -6,6 +6,8 @@ import MembershipSection from '@/components/home/membership/MembershipSection'
 import PrivacySection from '@/components/home/privacy/PrivacySection'
 // import ShadowsSection from '@/components/home/shadows/ShadowsSection'
 import WhyUsSection from '@/components/home/why-us/WhyUsSection'
+import { Params } from './layout'
+import Footer from '@/components/footer/Footer'
 
 const languages = ['en', 'de']
 
@@ -13,7 +15,8 @@ export async function generateStaticParams() {
     return languages.map((lng) => ({ lng }))
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Params }) {
+    const { lng } = await params
     return (
         <>
             <Header />
@@ -26,6 +29,7 @@ export default async function Home() {
                 <MembershipSection />
                 <FaqSection />
             </main>
+            <Footer lng={lng} />
         </>
     )
 }

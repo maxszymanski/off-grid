@@ -6,6 +6,8 @@ import Navbar from '@/components/nav/Navbar'
 import Footer from '@/components/footer/Footer'
 import AosProvider from '@/components/ui/AosProvider'
 import { dir } from 'i18next'
+import ModalsControler from '@/components/ui/ModalsControler'
+import ScrollToHash from '@/components/ui/ScrollToHash'
 
 const languages = ['en', 'de']
 
@@ -23,7 +25,7 @@ export const canela = localFont({
     variable: '--font-canela',
 })
 
-type Params = Promise<{ lng: string }>
+export type Params = Promise<{ lng: string }>
 
 export const metadata: Metadata = {
     title: 'Off Grid',
@@ -78,14 +80,14 @@ export default async function RootLayout({
     return (
         <html lang={lng} dir={dir(lng)} className="scroll-smooth">
             <body
-                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary w-full overflow-x-hidden antialiased relative flex min-h-screen flex-col`}
+                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary relative flex min-h-screen w-full flex-col overflow-x-hidden antialiased`}
             >
                 <AosProvider>
                     <Navbar lng={lng} />
                     {children}
-
-                    <Footer lng={lng} />
                 </AosProvider>
+                <ModalsControler />
+                <ScrollToHash />
             </body>
         </html>
     )

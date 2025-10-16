@@ -7,10 +7,25 @@
     --color-dark2: #0d0e10;
     --color-dark3: #090a0b;
     --color-dark4: #0e0f11;
+    --color-dark5: #181818;
 
     --font-canela: var(--font-canela), sans-serif;
 
     --breakpoint-xs: 360px;
+
+    --animate-visible: visible 0.3s ease-out;
+    @keyframes visible {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+.body--modal-open {
+    overflow: hidden;
 }
 
 .wrapper {

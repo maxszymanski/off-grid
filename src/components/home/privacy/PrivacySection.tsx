@@ -5,6 +5,7 @@ import Virtual from '@/assets/cards-bg/virtual.webp'
 import StyledLink from '@/components/ui/StyledLink'
 import PrivacyCard from './PrivacyCard'
 import { getT } from '@/app/i18n'
+import PrivacyLink from './PrivacyLink'
 
 const cards = [
     {
@@ -77,7 +78,7 @@ async function PrivacySection() {
                         {t('privacy.bottom-text.gray')}
                     </p>
                     <div className="flex justify-center">
-                        <StyledLink name="Learn About Our Security" href="/" />
+                        <PrivacyLink/>
                     </div>
                 </div>
             </div>

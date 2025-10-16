@@ -4,37 +4,38 @@ import HeroSm from '@/assets/footer-hero-sm.png'
 import HeroLarge from '@/assets/footer-hero.png'
 import FooterInfo from './FooterInfo'
 import { getT } from '@/app/i18n'
-import StyledLink from '../ui/StyledLink'
+import StyledLinkBox from '../ui/StyledLinkBox'
 
-async function Footer({ lng }: { lng: string }) {
+async function Footer({
+    lng,
+    isTitle = true,
+}: {
+    lng: string
+    isTitle?: boolean
+}) {
     const { t } = await getT('transition')
     return (
         <footer className="relative overflow-hidden">
-            <div className="mb-8 px-4 text-center" data-aos="fade-up">
-                <h2 className="section-title pb-[22px]">
-                    {t('footer.title.top')} <br /> {t('footer.title.bottom')}
-                </h2>
-                <p className="section-subtitle">
-                    {t('footer.subTitle.top')} <br />{' '}
-                    <span className="lg:text-primary/90 lg:font-medium">
-                        {' '}
-                        {t('footer.subTitle.bottom')}
-                    </span>
-                </p>
-            </div>
-            <div className="px-4" data-aos="zoom-in">
-                <div className="relative z-20 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                    <StyledLink
-                        name={t('footer.ctaLinkName')}
-                        borderPosition="top"
-                    />
-                    <StyledLink
-                        name={t('header.links.how-works')}
-                        variant="dark"
-                        borderPosition="bottom"
-                    />
-                </div>
-            </div>
+            {isTitle && (
+                <>
+                    <div className="mb-8 px-4 text-center" data-aos="fade-up">
+                        <h2 className="section-title pb-[22px]">
+                            {t('footer.title.top')} <br />{' '}
+                            {t('footer.title.bottom')}
+                        </h2>
+                        <p className="section-subtitle">
+                            {t('footer.subTitle.top')} <br />{' '}
+                            <span className="lg:text-primary/90 lg:font-medium">
+                                {' '}
+                                {t('footer.subTitle.bottom')}
+                            </span>
+                        </p>
+                    </div>
+                    <div className="px-4" data-aos="zoom-in">
+                        <StyledLinkBox revolution />
+                    </div>
+                </>
+            )}
             <div className="wrapper relative -mt-2 flex flex-col justify-end px-4 pt-[260px] sm:-mt-3 sm:aspect-[1170/780] md:max-h-[780px] xl:px-0">
                 <Image
                     src={HeroSm}

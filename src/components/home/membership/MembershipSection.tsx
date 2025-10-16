@@ -226,7 +226,7 @@ function MembershipSection() {
                     <div className="flex justify-center">
                         <StyledLink
                             name="Explore the Affiliate Program"
-                            href="/"
+                            href="/en/affiliate"
                         />
                     </div>
                 </div>

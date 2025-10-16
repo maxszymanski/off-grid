@@ -49,7 +49,7 @@ function Modal({
                     className={`bg-dark/40 fixed left-0 top-0 z-[100] flex h-dvh w-full items-end justify-center overflow-hidden backdrop-blur-sm lg:items-center`}
                 >
                     <div
-                        className={`scrollbar-none max-h-dvh w-full overflow-y-auto sm:w-fit animate-visible}`}
+                        className={`scrollbar-none max-h-dvh w-full overflow-y-auto sm:w-fit animate-visible`}
                         ref={modalRef}
                     >
                         {children}

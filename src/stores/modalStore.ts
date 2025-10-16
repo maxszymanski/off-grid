@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 
 type ModalStore = {
-    openModal: 'form-modal' | null
-    setOpenModal: (modalType: 'form-modal' | null) => void
+    openModal: 'waitlist-modal' | null
+    setOpenModal: (modalType: 'waitlist-modal' | null) => void
     closeModal: () => void
 }
 
