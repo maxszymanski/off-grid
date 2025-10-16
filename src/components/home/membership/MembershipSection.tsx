@@ -114,7 +114,10 @@ function MembershipSection() {
     }
 
     return (
-        <section className="wrapper relative -mt-1 w-full overflow-hidden bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]">
+        <section
+            className="wrapper relative -mt-1 w-full overflow-hidden bg-cover bg-top bg-no-repeat py-20 lg:py-[120px]"
+            id="affiliate"
+        >
             <Image
                 src={LightSm}
                 width={LightSm.width}
