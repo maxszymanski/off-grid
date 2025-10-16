@@ -43,17 +43,17 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://off-grid-eight.vercel.app',
+        url: 'https://off-grid-eight.vercel.app/en',
         siteName: 'Off Grid.',
         title: 'Off Grid',
         description:
             'Privacy-first crypto cards and instant payments. No KYC, no delays, no compromise.',
         images: [
             {
-                url: 'https://off-grid-eight.vercel.app/og-image.png',
+                url: 'https://off-grid-eight.vercel.app/en/og-image.png',
                 width: 1200,
                 height: 400,
-                alt: 'Spend Ltd.',
+                alt: 'Off Grid',
             },
         ],
     },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         title: 'Off Grid',
         description:
             'Privacy-first crypto cards and instant payments. No KYC, no delays, no compromise.',
-        images: ['https://off-grid-eight.vercel.app/og-image.png'],
+        images: ['https://off-grid-eight.vercel.app/en/og-image.png'],
     },
 }
 
@@ -78,7 +78,7 @@ export default async function RootLayout({
     return (
         <html lang={lng} dir={dir(lng)} className="scroll-smooth">
             <body
-                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary w-full overflow-x-hidden antialiased`}
+                className={`${geistSans.className} ${canela.variable} bg-blackBg text-primary w-full overflow-x-hidden antialiased relative flex min-h-screen flex-col`}
             >
                 <AosProvider>
                     <Navbar lng={lng} />
