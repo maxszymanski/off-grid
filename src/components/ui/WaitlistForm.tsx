@@ -90,7 +90,7 @@ function WaitlistForm() {
                             type="name"
                             name="name"
                             label="Name"
-                            placeholder="Enter your name"
+                            placeholder="Enter fake name..."
                             formRegister={register('name')}
                             error={errors?.name || null}
                             message={errors?.name?.message || null}

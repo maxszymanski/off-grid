@@ -23,7 +23,7 @@ function WhyUsOffGrid() {
                         <XCheckIcon check key={idx} />
                     ))} */}
                     <WhyUsInfo text="None. Ever" />
-                    <WhyUsInfo text="Up to $4,000/month per card, no KYC" />
+
                     <WhyUsInfo text="Apple Pay, Google Pay, Anywhere" />
                     <WhyUsInfo text="Impossible" />
                     <WhyUsInfo text="24/7, instant" />

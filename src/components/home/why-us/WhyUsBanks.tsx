@@ -9,7 +9,7 @@ function WhyUsBanks() {
                     Traditional Banks
                 </p>
                 <WhyUsInfo text="Required" />
-                <WhyUsInfo text="Strict" />
+
                 <XCheckIcon check />
                 <WhyUsInfo text="Often" />
                 <WhyUsInfo text="Slow" />

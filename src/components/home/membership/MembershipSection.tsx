@@ -186,7 +186,6 @@ function MembershipSection() {
                                     key={index}
                                     index={index}
                                     imageSrc={card.imageSrc}
-                                    linkHref={card.linkHref}
                                     list={card.list}
                                     per={per}
                                     monthPrice={card.monthPrice}

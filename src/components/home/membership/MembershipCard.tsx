@@ -1,7 +1,9 @@
+'use client'
 import Image from 'next/image'
 
 import CheckIcon from '@/assets/check-icon.svg'
 import StyledLink from '@/components/ui/StyledLink'
+import useModalStore from '@/stores/modalStore'
 
 interface CardProps {
     imageSrc: string
@@ -11,7 +13,6 @@ interface CardProps {
     title: string
     list: string[]
     index: number
-    linkHref: string
     linkName?: string
 }
 
@@ -23,9 +24,9 @@ function MembershipCard({
     index,
     title,
     list,
-    linkHref,
     linkName = 'Apply',
 }: CardProps) {
+    const setOpenModal = useModalStore((state) => state.setOpenModal)
     return (
         <div data-aos="zoom-out">
             <div className="bg-dark4 relative z-[1] flex h-fit w-[322px] shrink-0 flex-col gap-5 rounded-[14px] p-1 pb-4 transition-colors duration-300 hover:bg-[#18191c] lg:shrink xl:w-[403px] xl:gap-6 xl:rounded-2xl xl:p-2 xl:pb-6">
@@ -56,14 +57,16 @@ function MembershipCard({
                     </p>
 
                     <StyledLink
-                        href={linkHref}
+                        btn
+                        onClick={() => setOpenModal('waitlist-modal')}
                         name={linkName}
                         restClass="sm:!w-full lg:hidden"
                         variant={index % 2 === 0 ? 'light' : 'dark'}
                         isEllipse={false}
                     />
                     <StyledLink
-                        href={linkHref}
+                        btn
+                        onClick={() => setOpenModal('waitlist-modal')}
                         name={linkName}
                         restClass="sm:!w-full hidden lg:block"
                         variant={index % 2 === 0 ? 'dark' : 'light'}

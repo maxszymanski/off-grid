@@ -11,31 +11,33 @@ async function FooterInfo() {
             <div data-aos="zoom-in">
                 <Logo />
             </div>
-            <div className="my-8" data-aos="fade-up">
-                <p className="text-primary/70 mb-5">
-                    {t('footer.info.info-text')}
-                </p>
-                <p className="inline-flex items-center gap-2">
-                    <span className="footer-elipse-shadow size-2 rounded-full border border-black/60 bg-[#60F907]"></span>
-                    <span> {t('footer.info.all-systems')}</span>
-                </p>
-            </div>
-            <div className="flex items-center gap-1.5" data-aos="zoom-in">
-                {/* <SocialLink
+            <div data-aos="fade-up">
+                <div className="my-8">
+                    <p className="text-primary/70 mb-5">
+                        {t('footer.info.info-text')}
+                    </p>
+                    <p className="inline-flex items-center gap-2">
+                        <span className="footer-elipse-shadow size-2 rounded-full border border-black/60 bg-[#60F907]"></span>
+                        <span> {t('footer.info.all-systems')}</span>
+                    </p>
+                </div>
+                <div className="flex items-center gap-1.5">
+                    {/* <SocialLink
                     href="https://linkedin.com"
                     icon={FaLinkedin}
                     label={t('footer.info.label')}
-                /> */}
-                <SocialLink
-                    href="https://x.com/offgridcash"
-                    icon={FaSquareXTwitter}
-                    label={t('footer.info.label')}
-                />
-                {/* <SocialLink
+                    /> */}
+                    <SocialLink
+                        href="https://x.com/offgridcash"
+                        icon={FaSquareXTwitter}
+                        label={t('footer.info.label')}
+                    />
+                    {/* <SocialLink
                     href="https://pinterest.com"
                     icon={FaPinterest}
                     label={t('footer.info.label')}
                 /> */}
+                </div>
             </div>
         </div>
     )

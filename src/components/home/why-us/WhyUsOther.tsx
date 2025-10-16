@@ -9,7 +9,7 @@ function WhyUsOther() {
                     Other Crypto Cards
                 </p>
                 <WhyUsInfo text="Usually" />
-                <WhyUsInfo text="Low" />
+
                 <WhyUsInfo text="Some" />
                 <WhyUsInfo text="Possible" />
                 <WhyUsInfo text="Delayed" />

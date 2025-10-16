@@ -2,10 +2,9 @@ import Question from '@/assets/cards-bg/question.webp'
 import Trash from '@/assets/cards-bg/trash.webp'
 import Lock from '@/assets/cards-bg/lock.webp'
 import Virtual from '@/assets/cards-bg/virtual.webp'
-import StyledLink from '@/components/ui/StyledLink'
 import PrivacyCard from './PrivacyCard'
 import { getT } from '@/app/i18n'
-import PrivacyLink from './PrivacyLink'
+import OpenModalButton from '@/components/affiliate/OpenModalButton'
 
 const cards = [
     {
@@ -78,7 +77,7 @@ async function PrivacySection() {
                         {t('privacy.bottom-text.gray')}
                     </p>
                     <div className="flex justify-center">
-                        <PrivacyLink/>
+                        <OpenModalButton name="Join the waitlist" />
                     </div>
                 </div>
             </div>
