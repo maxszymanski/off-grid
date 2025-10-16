@@ -9,13 +9,13 @@ function NavList({ lng }: { lng: string }) {
     const list = [
         { name: 'home', href: `/${lng}`, page: '/', subPage: true },
         { name: 'how-works', href: `/${lng}`, page: '/#how-works' },
+        { name: 'security', href: `/${lng}`, page: '/#security' },
         {
             name: 'affiliate',
             href: `/${lng}/affiliate`,
             page: '/affiliate',
             subPage: true,
         },
-        { name: 'security', href: `/${lng}`, page: '/#security' },
         { name: 'ecosystem', href: `/${lng}`, page: '/#ecosystem' },
     ]
     return (
