@@ -6,6 +6,7 @@ import TopBar from './TopBar'
 import Nav from './Nav'
 import { createPortal } from 'react-dom'
 import NavList from './NavList'
+import { usePathname } from 'next/navigation'
 
 function Navbar({ lng }: { lng: string }) {
     const [show, setShow] = useState(true)
@@ -13,6 +14,19 @@ function Navbar({ lng }: { lng: string }) {
     const [lastScrollY, setLastScrollY] = useState(0)
     const [isExpanded, setIsExpanded] = useState(false)
     const [hasBorder, setHasBorder] = useState(false)
+
+    const pathname = usePathname()
+
+    const toogleNav = () => {
+        setIsExpanded((is) => !is)
+    }
+    const closeNav = useCallback(() => {
+        setIsExpanded(false)
+    }, [])
+
+    useEffect(() => {
+        closeNav()
+    }, [pathname, closeNav])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,13 +52,6 @@ function Navbar({ lng }: { lng: string }) {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [lastScrollY, isExpanded])
-
-    const toogleNav = () => {
-        setIsExpanded((is) => !is)
-    }
-    const closeNav = useCallback(() => {
-        setIsExpanded(false)
-    }, [])
 
     useClickOutside(navRef, closeNav)
 
