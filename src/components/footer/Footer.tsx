@@ -6,7 +6,7 @@ import StyledLinkBox from '../ui/StyledLinkBox'
 
 async function Footer({
     lng,
-    isTitle = true,
+    isTitle = false,
 }: {
     lng: string
     isTitle?: boolean
