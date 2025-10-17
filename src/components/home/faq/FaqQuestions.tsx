@@ -12,7 +12,7 @@ function FaqQuestions() {
         setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
     }
     return (
-        <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-2 py-8 lg:py-[60px]">
+        <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-2 pt-8 lg:pt-[60px]">
             {Array.from({ length: 6 }).map((_, idx) => (
                 <Accorderon
                     key={idx}

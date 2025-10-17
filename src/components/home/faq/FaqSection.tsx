@@ -6,7 +6,7 @@ async function FaqSection() {
     const { t } = await getT('transition')
     return (
         <section
-            className="wrapper flex flex-col items-center px-4 pb-20 lg:pb-[120px] xl:px-0"
+            className="wrapper flex flex-col items-center px-4 xl:px-0"
             id="ecosystem"
         >
             <div
