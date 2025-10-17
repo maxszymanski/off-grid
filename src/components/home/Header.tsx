@@ -1,4 +1,3 @@
-import HeaderBg from '@/assets/hero-bg.webp'
 import Card from '@/assets/card.png'
 import Image from 'next/image'
 import StyledLinkBox from '../ui/StyledLinkBox'
@@ -10,7 +9,7 @@ async function Header() {
     return (
         <header className="relative max-h-[1022px] min-h-[794px] w-full overflow-hidden lg:min-h-[1022px]">
             <Image
-                src={HeaderBg}
+                src="/assets/hero-bg.webp"
                 fill
                 alt=""
                 className="object-cover object-center 2xl:object-bottom"
