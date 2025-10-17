@@ -3,8 +3,6 @@ import StyledLink from '@/components/ui/StyledLink'
 import ScrollButton from '../info/ScrollButton'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
-import LightSm from '@/assets/membership-light-sm.webp'
-import Light from '@/assets/membership-light.png'
 import Gradient from '@/assets/gradient.png'
 import Image from 'next/image'
 import MembershipCard from './MembershipCard'
@@ -119,18 +117,18 @@ function MembershipSection() {
             id="affiliate"
         >
             <Image
-                src={LightSm}
-                width={LightSm.width}
-                height={LightSm.height}
+                src="/assets/membership-light-sm.webp"
+                width={399}
+                height={673}
                 className={`absolute left-1/2 top-0 z-[1] min-h-[646px] -translate-x-1/2 lg:hidden`}
                 alt=""
                 quality={100}
                 data-aos="zoom-out"
             />
             <Image
-                src={Light}
-                width={Light.width}
-                height={Light.height}
+                src="/assets/membership-light.png"
+                width={1239}
+                height={673}
                 className={`absolute left-1/2 top-0 z-[1] hidden min-h-[673px] -translate-x-1/2 lg:block`}
                 alt=""
                 quality={100}

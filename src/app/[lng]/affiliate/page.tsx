@@ -1,4 +1,3 @@
-import { getT } from '@/app/i18n'
 import AffiliateHeader from '@/components/affiliate/AffiliateHeader'
 import { Params } from '../layout'
 import Footer from '@/components/footer/Footer'
@@ -7,7 +6,6 @@ import LevelSection from '@/components/affiliate/LevelSection'
 
 async function Affiliate({ params }: { params: Params }) {
     const { lng } = await params
-    const { t } = await getT('affiliate')
     return (
         <>
             <AffiliateHeader />

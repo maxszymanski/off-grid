@@ -1,12 +1,11 @@
 import Image from 'next/image'
-import LogoIcon from '@/assets/logo.svg'
 import Link from 'next/link'
 
 function Logo() {
     return (
         <Link href="/">
             <Image
-                src={LogoIcon}
+                src="/assets/logo.svg"
                 width={136}
                 height={36}
                 alt="company logo"

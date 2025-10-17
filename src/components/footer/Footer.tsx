@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import FooterLists from './FooterLists'
-import HeroSm from '@/assets/footer-hero-sm.png'
-import HeroLarge from '@/assets/footer-hero.png'
 import FooterInfo from './FooterInfo'
 import { getT } from '@/app/i18n'
 import StyledLinkBox from '../ui/StyledLinkBox'
@@ -38,7 +36,7 @@ async function Footer({
             )}
             <div className="wrapper relative -mt-2 flex flex-col justify-end px-4 pt-[260px] sm:-mt-3 sm:aspect-[1170/780] md:max-h-[780px] xl:px-0">
                 <Image
-                    src={HeroSm}
+                    src="/assets/footer-hero-sm.png"
                     width={439}
                     height={390}
                     alt=""
@@ -47,7 +45,7 @@ async function Footer({
                     data-aos="zoom-in"
                 />
                 <Image
-                    src={HeroLarge}
+                    src="/assets/footer-hero.png"
                     width={1170}
                     height={780}
                     alt=""
