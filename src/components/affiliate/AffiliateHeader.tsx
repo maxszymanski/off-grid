@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Light from '@/assets/hero-sub.png'
 import { getT } from '@/app/i18n'
 import OpenModalButton from './OpenModalButton'
 
@@ -15,7 +14,7 @@ async function AffiliateHeader() {
                 priority
                 fetchPriority="high"
                 quality={100}
-                src={Light}
+                src="/assets/hero-sub.png"
             />
 
             <div className="relative z-[1] mx-auto flex w-full max-w-[583px] flex-col px-4 pt-[292px] text-center sm:px-0 md:pt-[359px]">

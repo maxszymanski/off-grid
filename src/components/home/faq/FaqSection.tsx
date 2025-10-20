@@ -1,4 +1,4 @@
-import StyledLink from '@/components/ui/StyledLink'
+// import StyledLink from '@/components/ui/StyledLink'
 import FaqQuestions from './FaqQuestions'
 import { getT } from '@/app/i18n'
 
@@ -6,7 +6,7 @@ async function FaqSection() {
     const { t } = await getT('transition')
     return (
         <section
-            className="wrapper flex flex-col items-center px-4 pb-20 lg:pb-[120px] xl:px-0"
+            className="wrapper flex flex-col items-center px-4 xl:px-0"
             id="ecosystem"
         >
             <div
@@ -22,7 +22,7 @@ async function FaqSection() {
                 </p>
             </div>
             <FaqQuestions />
-            <div
+            {/* <div
                 className="flex flex-col items-center text-center"
                 data-aos="zoom-in"
             >
@@ -35,7 +35,7 @@ async function FaqSection() {
                     href="https://x.com/offgridcash"
                     target="_blanc"
                 />
-            </div>
+            </div> */}
         </section>
     )
 }
